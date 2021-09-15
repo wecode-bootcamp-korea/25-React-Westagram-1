@@ -9,7 +9,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <section>
+      <section class="loginMiyeon">
         <article>
           <div className="loginBox">
             <h1 className="catstaLogo1">

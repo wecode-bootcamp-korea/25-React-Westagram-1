@@ -4,9 +4,9 @@ import './Main.scss';
 class Main extends Component {
   render() {
     return (
-      <>
-        <header>
-          <nav>
+      <div class="mainMiyeon">
+        <header class="mainHeader">
+          <nav class="mainNav">
             <div className="leftBar">
               <span className="catstaLogo">
                 <img src="./images/miyeon/catFoot.png" class="catFoot" />
@@ -38,7 +38,7 @@ class Main extends Component {
           </nav>
         </header>
 
-        <section>
+        <section class="mainSection">
           <article className="wrapper">
             <div className="feedHeader">
               <div className="headerLeft">
@@ -197,7 +197,7 @@ class Main extends Component {
             </footer>
           </div>
         </section>
-      </>
+      </div>
     );
   }
 }

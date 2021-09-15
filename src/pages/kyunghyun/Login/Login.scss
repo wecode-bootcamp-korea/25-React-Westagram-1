@@ -1,0 +1,177 @@
+.Login {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  user-select: auto;
+  position: absolute;
+  align-items: center;
+  width: 372px;
+  height: 561px;
+  margin-top: 100px;
+
+  header {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    h1 {
+      display: block;
+      width: auto;
+      margin: 22px 12px;
+      height: 51px;
+      font-family: "Style Script", cursive;
+      font-size: 50px;
+      text-align: center;
+      color: #000;
+      font-weight: 800;
+    }
+    .main-function {
+      justify-content: center;
+      width: 360px;
+      height: 263px;
+    }
+  }
+  .sign-in {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    margin: 0 6px;
+    padding: 10px 0;
+  }
+  .download-app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #login-form,
+  .main-function,
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-function,
+  header {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  #login-form {
+    width: 100%;
+  }
+  input {
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+  .id {
+    margin: 0 50px 6px;
+    padding: 9px 0 7px 8px;
+    font-size: 16px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    line-height: 18px;
+  }
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 8px 40px;
+  }
+  .login {
+    margin: 6px 50px;
+    padding: 5px 9px;
+    border: 1px solid;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgba(0, 149, 246, 0.5);
+    text-align: center;
+    cursor: default;
+  }
+  .submit-suceed {
+    background-color: #0095f6;
+    cursor: pointer;
+  }
+  .else {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 40px 18px;
+  }
+  .line {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+    top: 0.45em;
+  }
+  .text-else {
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 18px;
+  }
+  .fb-login {
+    position: relative;
+    border: 0;
+    background-color: #fff;
+    display: inline;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+  }
+  .fb-login-icon {
+    background-image: url(https://wonkooklee.github.io/westabucks/resources/img/logo.jpg);
+    background-size: cover;
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+    top: 3px;
+    height: 16px;
+    width: 16px;
+  }
+  .fb-login-text,
+  .forgot-pw {
+    color: #385185;
+    text-align: center;
+  }
+  .forgot-pw {
+    color: #00376b;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    // text-decoration: none;
+  }
+
+  .ask-have-account {
+    color: #262626;
+    font-size: 14px;
+    margin: 15px;
+    text-align: center;
+  }
+  .sign-in-hypertext {
+    color: #0095f6;
+    font-weight: 600;
+  }
+
+  .download-link-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .apple-download-link {
+    margin-right: 8px;
+  }
+  .download-img {
+    height: 40px;
+    cursor: pointer;
+  }
+}

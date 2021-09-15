@@ -1,17 +1,11 @@
-.Main {
-  body {
-    height: 100%;
-  }
-  html {
-    height: 100%;
-  }
+.KyungHyunMain {
   nav {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
     width: 975px;
     padding: 0 20px;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // background: #fff;
   }
   article {
     background: #fafafa;
@@ -148,18 +142,16 @@
   }
 
   .main-header {
-    background: #fff;
     display: flex;
     justify-content: center;
     height: 55px;
   }
   .home-img-box {
-    height: 29px;
     flex-grow: 1;
-    text-align: left;
+    height: 29px;
   }
   #search {
-    height: 100%;
+    // height: 100%;
     width: 215px;
     background: #fafafa;
     padding: 3px 10px 3px 26px;
@@ -169,32 +161,26 @@
   .home-img {
     height: 100%;
   }
-  .home-img-link {
-    height: 100%;
-  }
   .search {
-    padding-bottom: 15px;
-    height: 28px;
-    flex-grow: 1;
-    background: #fff;
-    display: flex;
-    justify-content: center;
+    // padding-bottom: 15px;
+    // height: 28px;
+    // flex-grow: 1;
+    // background: #fff;
+    // display: flex;
+    // justify-content: center;
   }
   .icon-box {
     display: flex;
-    align-items: center;
-    flex-grow: 1;
-    text-align: right;
     justify-content: right;
+    flex-grow: 1;
+    .icon-box2 {
+      display: flex;
+      justify-content: space-between;
+      width: 198px;
+      padding: 0 24px;
+    }
   }
-  .icon-box2 {
-    display: flex;
-    align-items: center;
-    width: 198px;
-    height: 22px;
-    padding: 0 24px;
-    justify-content: space-between;
-  }
+
   .icon {
     height: 22px;
     width: 22px;

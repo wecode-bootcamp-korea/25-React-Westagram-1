@@ -22,8 +22,6 @@ class Main extends React.Component {
             </div>
             <div className="icon-box">
               <div className="icon-box2">
-                {/* <div class="icon home-icon"></div>
-                <div class="icon dm-icon"></div> */}
                 <a className="profile icon">
                   {' '}
                   <img
@@ -137,12 +135,6 @@ class Main extends React.Component {
                       nyangnya29
                     </a>
                   </div>
-                  {/* <li class="story-list">
-                        <div class="story-list-box">
-                            <a class="story-a" href=""><img class="story-img"  src="https://images.unsplash.com/photo-1500259571355-332da5cb07aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" alt="user8"></a>
-                            <a href="">areumjin2</a>
-                        </div>
-                    </li>   */}
                 </div>
               </div>
               <div className="feed-box">
@@ -270,13 +262,8 @@ class Main extends React.Component {
                       </a>
                     </div>
                     <div className="span-box">
-                      <span>
-                        <a
-                          className="bold"
-                          href="https://www.instagram.com/kich555/"
-                        >
-                          kich555
-                        </a>
+                      <span className="bold">
+                        <a href="https://www.instagram.com/kich555/">kich555</a>
                       </span>
                       <span className="sub">Smile</span>
                     </div>
@@ -299,7 +286,7 @@ class Main extends React.Component {
                   </a>
                 </div>
                 <div className="aside-main-box2">
-                  <div className="aside-profile aside-header">
+                  <div className="aside-header">
                     <div className="aside-header-profile">
                       <div className="aside-header-profile-profile">
                         <div className="aside-header-profile-img">

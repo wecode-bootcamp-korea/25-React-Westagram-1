@@ -269,18 +269,16 @@ class Main extends React.Component {
                         />
                       </a>
                     </div>
-                    <div className="aside-header-profile-text">
-                      <div className="aside-header-profile-text-name">
+                    <div className="span-box">
+                      <span>
                         <a
                           className="bold"
                           href="https://www.instagram.com/kich555/"
                         >
                           kich555
                         </a>
-                      </div>
-                      <div style={{ color: '#8e8e8e' }} className="basic">
-                        Smile
-                      </div>
+                      </span>
+                      <span className="sub">Smile</span>
                     </div>
                   </div>
                   <div>
@@ -468,112 +466,108 @@ class Main extends React.Component {
                 </div>
               </div>
               <div className="aside-buttom">
-                <div className="aside-buttom-box">
-                  <div className="aside-buttom-nav">
-                    <ul className="aside-buttom-ul">
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          target="_blank"
-                          href="https://about.instagram.com/"
-                          rel="noreferrer"
-                        >
-                          소개·
-                        </a>{' '}
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://help.instagram.com/"
-                        >
-                          도움말·
-                        </a>{' '}
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://about.instagram.com/blog"
-                        >
-                          홍보 센터·
-                        </a>{' '}
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          target="_blank"
-                          href="https://developers.facebook.com/docs/instagram"
-                          rel="noreferrer"
-                        >
-                          API·
-                        </a>{' '}
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://about.instagram.com/about-us/careers"
-                        >
-                          채용 정보·
-                        </a>{' '}
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://help.instagram.com/519522125107875"
-                        >
-                          개인정보처리방침·
-                        </a>{' '}
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://help.instagram.com/581066165581870"
-                        >
-                          약관·
-                        </a>
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://www.instagram.com/explore/locations/"
-                        >
-                          위치·
-                        </a>
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://www.instagram.com/directory/profiles/"
-                        >
-                          인기 계정·
-                        </a>
-                      </li>
-                      <li>
-                        {' '}
-                        <a
-                          className="aside-bottom-list"
-                          href="https://www.instagram.com/directory/hashtags/"
-                        >
-                          해시태그·
-                        </a>
-                      </li>
-                      <li>
-                        {' '}
-                        <a className="aside-bottom-list" href>
-                          언어
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <ul className="aside-buttom-ul">
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      target="_blank"
+                      href="https://about.instagram.com/"
+                      rel="noreferrer"
+                    >
+                      소개·
+                    </a>{' '}
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://help.instagram.com/"
+                    >
+                      도움말·
+                    </a>{' '}
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://about.instagram.com/blog"
+                    >
+                      홍보 센터·
+                    </a>{' '}
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      target="_blank"
+                      href="https://developers.facebook.com/docs/instagram"
+                      rel="noreferrer"
+                    >
+                      API·
+                    </a>{' '}
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://about.instagram.com/about-us/careers"
+                    >
+                      채용 정보·
+                    </a>{' '}
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://help.instagram.com/519522125107875"
+                    >
+                      개인정보처리방침·
+                    </a>{' '}
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://help.instagram.com/581066165581870"
+                    >
+                      약관·
+                    </a>
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://www.instagram.com/explore/locations/"
+                    >
+                      위치·
+                    </a>
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://www.instagram.com/directory/profiles/"
+                    >
+                      인기 계정·
+                    </a>
+                  </li>
+                  <li>
+                    {' '}
+                    <a
+                      className="aside-bottom-list"
+                      href="https://www.instagram.com/directory/hashtags/"
+                    >
+                      해시태그·
+                    </a>
+                  </li>
+                  <li>
+                    {' '}
+                    <a className="aside-bottom-list" href>
+                      언어
+                    </a>
+                  </li>
+                </ul>
                 <span className="aside-buttom-text">
                   © 2021 Instagram from Facebook
                 </span>

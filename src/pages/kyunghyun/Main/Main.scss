@@ -40,6 +40,12 @@
   color: #0095f6;
 }
 
+@mixin small-basic2 {
+  font-size: 12px;
+  counter-reset: #262626;
+  font-weight: 600;
+}
+
 .KyungHyunMain {
   .main-header {
     display: flex;
@@ -320,6 +326,39 @@
           height: auto;
           margin: 18px 0 10px 0;
         }
+        .aside-main {
+          margin-bottom: 12px;
+          display: flex;
+          flex-direction: column;
+          .aside-main-box1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0;
+            @include bold;
+            .small-basic2 {
+              @include small-basic2;
+            }
+          }
+        }
+        .aside-buttom {
+          display: flex;
+          flex-direction: column;
+          .aside-buttom-ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            .aside-bottom-list {
+              font-size: 11px;
+              color: #c7c7c7;
+            }
+          }
+          .aside-buttom-text {
+            font-weight: 400;
+            font-size: 11px;
+            color: #c7c7c7;
+          }
+        }
       }
     }
   }
@@ -329,19 +368,42 @@
     font-weight: 500;
     color: #000;
   }
-  li {
-    marker: none;
-    list-style: none;
-  }
 
   .aside-header-profile {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-    margin-right: 4px;
     .aside-header-profile-profile {
       display: flex;
+      .aside-header-profile-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .aside-header-profile-img-a {
+          width: 56px;
+          height: 56px;
+          display: block;
+          border-radius: 50%;
+          overflow: hidden;
+          .aside-header-profile-img-a-img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .span-box {
+        padding: 5px 0 0 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .bold {
+          @include bold;
+        }
+        .sub {
+          @include small-grey;
+        }
+      }
     }
     .change-btn {
       font-size: 12px;
@@ -349,18 +411,6 @@
     }
   }
 
-  .aside-header-profile-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .aside-header-profile-img-a {
-    width: 56px;
-    height: 56px;
-    display: block;
-    border-radius: 50%;
-    overflow: hidden;
-  }
   .aside-header-profile-img-b {
     width: 56px;
     height: 56px;
@@ -370,28 +420,7 @@
     width: 32px;
     height: 32px;
   }
-  .aside-header-profile-img-a-img {
-    width: 100%;
-    height: 100%;
-  }
-  .aside-header-profile-text {
-    padding-left: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
-  .aside-main {
-    margin-bottom: 12px;
-    display: flex;
-    flex-direction: column;
-  }
-  .aside-main-box1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 4px 0;
-  }
   .side-main-box2 {
     display: flex;
     flex-direction: column;
@@ -403,42 +432,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  .aside-buttom {
-    padding-bottom: 38px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fafafa;
-  }
-  .aside-buttom-box {
-    display: flex;
-    margin-bottom: 16px;
-  }
-  .aside-buttom-ul {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .aside-buttom-text {
-    font-weight: 400;
-    font-size: 11px;
-    color: #c7c7c7;
-  }
-  .aside-bottom-list {
-    font-size: 11px;
-    color: #c7c7c7;
-  }
-
-  .home-icon {
-    background-color: #a5d6a7;
-  }
-  .dm-icon {
-    background-color: #e6ee9c;
-  }
-  .explore-icon {
-    background-color: #ef9a9a;
-  }
-  .heart-icon {
-    background-color: #f48fb1;
   }
 
   .iicon {
@@ -453,16 +446,15 @@
     font-size: 12px;
     color: #8e8e8e;
   }
-  .small-basic2 {
-    font-size: 12px;
-    counter-reset: #262626;
-    font-weight: 600;
-  }
 
   .comment-btn {
     width: 24px;
     height: 24px;
     border-radius: 50%;
+  }
+
+  .small-basic2 {
+    @include small-basic2;
   }
 
   input {

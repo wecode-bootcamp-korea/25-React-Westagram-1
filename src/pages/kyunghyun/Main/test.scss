@@ -1,0 +1,43 @@
+.profile-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // padding: 0 10px;
+  // background: #fff;
+  .profile-div {
+    display: flex;
+    .profile-img-area {
+      // height: 36px;
+      // width: 36px;
+      .profile-img-link {
+        .profile-img {
+          height: 100%;
+          border-radius: 70%;
+        }
+      }
+    }
+    .state-message-box {
+      padding: 5px 0 0 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .bold-text {
+        @include bold;
+      }
+      .gret-text {
+        @include small-grey;
+      }
+    }
+  }
+  .interactive-box {
+    // height: 60px;
+    display: flex;
+    align-items: center;
+    .interactive {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }

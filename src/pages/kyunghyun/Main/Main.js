@@ -17,8 +17,8 @@ class Main extends React.Component {
                 />
               </a>
             </div>
-            <div className="search">
-              <input type="text" id="search" placeholder="검색" />
+            <div>
+              <input type="text" className="search" placeholder="검색" />
             </div>
             <div className="icon-box">
               <div className="icon-box2">
@@ -163,12 +163,18 @@ class Main extends React.Component {
                       </div>
                       <div className="span-box">
                         <span>
-                          <a href="https://www.instagram.com/kich555/">
+                          <a
+                            className="bold"
+                            href="https://www.instagram.com/kich555/"
+                          >
                             kich555
                           </a>
                         </span>
                         <span>
-                          <a id="sub" href="https://www.instagram.com/kich555/">
+                          <a
+                            className="sub"
+                            href="https://www.instagram.com/kich555/"
+                          >
                             Wecode-위코드
                           </a>
                         </span>
@@ -574,8 +580,6 @@ class Main extends React.Component {
               </div>
             </aside>
           </section>
-          <div2 />
-          <div3 />
         </main>
       </div>
     );

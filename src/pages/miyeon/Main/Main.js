@@ -4,12 +4,12 @@ import './Main.scss';
 class Main extends Component {
   render() {
     return (
-      <div class="mainMiyeon">
-        <header class="mainHeader">
-          <nav class="mainNav">
+      <div className="mainMiyeon">
+        <header className="mainHeader">
+          <nav className="mainNav">
             <div className="leftBar">
               <span className="catstaLogo">
-                <img src="./images/miyeon/catFoot.png" class="catFoot" />
+                <img src="./images/miyeon/catFoot.png" className="catFoot" />
               </span>
               <a href="/Main-MiYeon" className="catstaText">
                 <h1 className="catstaLogo2">catstagram</h1>
@@ -38,7 +38,7 @@ class Main extends Component {
           </nav>
         </header>
 
-        <section class="mainSection">
+        <section className="mainSection">
           <article className="wrapper">
             <div className="feedHeader">
               <div className="headerLeft">

@@ -3,6 +3,29 @@ import { withRouter } from 'react-router-dom';
 import './Login.scss';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      idVal: '',
+      pwVal: '',
+    }; // id와 pw의 state값 초기화
+  }
+
+  handleIdInput = e => {
+    this.setState({
+      idVal: e.target.value,
+    });
+    // alert(e.target.value);
+    console.log(e.target.value);
+  }; // id값 state에 저장
+
+  handlePwInput = e => {
+    this.setState({
+      pwVal: e.target.value,
+    });
+    console.log(e.target.value);
+  }; // pw값 state에 저장
+
   goToMain = () => {
     this.props.history.push('/Main-MiYeon');
   };
@@ -17,14 +40,19 @@ class Login extends React.Component {
               <img src="./images/miyeon/catFoot.png" class="catFoot" />
             </h1>
             <div>
-              <form className="loginForm">
-                <input
-                  type="text"
-                  id="idInput"
-                  placeholder="전화번호, 사용자 이름 또는 이메일"
-                />
-                <input type="password" id="pwInput" placeholder="비밀번호" />
-              </form>
+              <input
+                type="text"
+                id="idInput"
+                name="id"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={this.handleIdInput}
+              />
+              <input
+                type="password"
+                id="pwInput"
+                placeholder="비밀번호"
+                onChange={this.handlePwInput}
+              />
               <button className="loginGo" onClick={this.goToMain}>
                 로그인
               </button>

@@ -246,31 +246,41 @@ class Main extends React.Component {
               </div>
             </div>
             <aside>
-              <div className="aside-header">
-                <div className="aside-header-profile">
-                  <div className="aside-header-profile-profile">
-                    <div className="aside-header-profile-img">
+              <div className="article-header">
+                <div className="article-div">
+                  <div className="my-profile article-header-profile">
+                    <a
+                      className="article-header-profile-link"
+                      href="https://www.instagram.com/kich555/"
+                    >
+                      <img
+                        className="article-header-profile-img"
+                        src="https://images.velog.io/images/kich555/profile/5ed64ce8-0f40-49a4-bcc2-ed8d4f7649c3/social.jpeg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="span-box">
+                    <span>
                       <a
-                        className="aside-header-profile-img-a"
+                        className="bold"
                         href="https://www.instagram.com/kich555/"
                       >
-                        <img
-                          className="aside-header-profile-img-a-img"
-                          src="https://images.velog.io/images/kich555/profile/5ed64ce8-0f40-49a4-bcc2-ed8d4f7649c3/social.jpeg"
-                          alt="profle"
-                        />
+                        kich555
                       </a>
-                    </div>
-                    <div className="span-box">
-                      <span className="bold">
-                        <a href="https://www.instagram.com/kich555/">kich555</a>
-                      </span>
-                      <span className="sub">Smile</span>
-                    </div>
+                    </span>
+                    <span>
+                      <a
+                        className="sub"
+                        href="https://www.instagram.com/kich555/"
+                      >
+                        upset
+                      </a>
+                    </span>
                   </div>
-                  <div>
-                    <a className="change-btn">전환</a>
-                  </div>
+                </div>
+                <div>
+                  <a className="change-btn">전환</a>
                 </div>
               </div>
               <div className="aside-main">
@@ -286,169 +296,126 @@ class Main extends React.Component {
                   </a>
                 </div>
                 <div className="aside-main-box2">
-                  <div className="aside-header">
-                    <div className="aside-header-profile">
-                      <div className="aside-header-profile-profile">
-                        <div className="aside-header-profile-img">
-                          <a
-                            className="aside-header-profile-img-b"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            <img
-                              className="aside-header-profile-img-a-img"
-                              src="https://images.unsplash.com/photo-1631213717462-1cac02745998?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                              alt="profle"
-                            />
-                          </a>
-                        </div>
-                        <div className="aside-header-profile-text">
-                          <div className="aside-header-profile-text-name">
-                            <a
-                              className="bold"
-                              href="https://www.instagram.com/kich555/"
-                            >
-                              Jonathan265
-                            </a>
-                          </div>
-                          <div className="small-basic">
-                            Did I turn off the gas stove?
-                          </div>
-                        </div>
+                  <div className="article-header">
+                    <div className="article-div">
+                      <div className="article-header-profile">
+                        <a
+                          className="article-header-profile-link"
+                          href="https://www.instagram.com/kich555/"
+                        >
+                          <img
+                            className="article-header-profile-img"
+                            src="https://images.unsplash.com/photo-1631213717462-1cac02745998?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+                            alt=""
+                          />
+                        </a>
                       </div>
-                      <div>
-                        <a className="change-btn">팔로우</a>
+                      <div className="span-box">
+                        <span className="bold">Jonathan265</span>
+                        <span className="small-basic">
+                          Did I turn off the gas stove?
+                        </span>
                       </div>
+                    </div>
+                    <div>
+                      <a className="change-btn">팔로우</a>
                     </div>
                   </div>
-                  <div className="aside-header">
-                    <div className="aside-header-profile">
-                      <div className="aside-header-profile-profile">
-                        <div className="aside-header-profile-img">
-                          <a
-                            className="aside-header-profile-img-b"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            <img
-                              className="aside-header-profile-img-a-img"
-                              src="https://images.unsplash.com/photo-1558346489-19413928158b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                              alt="profle"
-                            />
-                          </a>
-                        </div>
-                        <div className="aside-header-profile-text">
-                          <div className="aside-header-profile-text-name">
-                            <a
-                              className="bold"
-                              href="https://www.instagram.com/kich555/"
-                            >
-                              WineLover
-                            </a>
-                          </div>
-                          <div className="small-basic">
-                            To me, wine is a water
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <a className="change-btn">팔로우</a>
-                      </div>
+                </div>
+
+                <div className="article-header">
+                  <div className="article-div">
+                    <div className="article-header-profile">
+                      <a
+                        className="article-header-profile-link"
+                        href="https://www.instagram.com/kich555/"
+                      >
+                        <img
+                          className="article-header-profile-img"
+                          src="https://images.unsplash.com/photo-1558346489-19413928158b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div className="span-box">
+                      <span className="bold">WineLover</span>
+                      <span className="small-basic">
+                        To me, wine is a water
+                      </span>
                     </div>
                   </div>
-                  <div className="aside-header">
-                    <div className="aside-header-profile">
-                      <div className="aside-header-profile-profile">
-                        <div className="aside-header-profile-img">
-                          <a
-                            className="aside-header-profile-img-b"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            <img
-                              className="aside-header-profile-img-a-img"
-                              src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=912&q=80"
-                              alt="profle"
-                            />
-                          </a>
-                        </div>
-                        <div className="aside-header-profile-text">
-                          <div className="aside-header-profile-text-name">
-                            <a
-                              className="bold"
-                              href="https://www.instagram.com/kich555/"
-                            >
-                              Nugget723
-                            </a>
-                          </div>
-                          <div className="small-basic">Come on pet me!!</div>
-                        </div>
-                      </div>
-                      <div>
-                        <a className="change-btn">팔로우</a>
-                      </div>
+                  <div>
+                    <a className="change-btn">팔로우</a>
+                  </div>
+                </div>
+                <div className="article-header">
+                  <div className="article-div">
+                    <div className="article-header-profile">
+                      <a
+                        className="article-header-profile-link"
+                        href="https://www.instagram.com/kich555/"
+                      >
+                        <img
+                          className="article-header-profile-img"
+                          src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=912&q=80"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div className="span-box">
+                      <span className="bold">Nugget723</span>
+                      <span className="small-basic">Come on pet me!!</span>
                     </div>
                   </div>
-                  <div className="aside-header">
-                    <div className="aside-header-profile">
-                      <div className="aside-header-profile-profile">
-                        <div className="aside-header-profile-img">
-                          <a
-                            className="aside-header-profile-img-b"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            <img
-                              className="aside-header-profile-img-a-img"
-                              src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80"
-                              alt="profle"
-                            />
-                          </a>
-                        </div>
-                        <div className="aside-header-profile-text">
-                          <div className="aside-header-profile-text-name">
-                            <a
-                              className="bold"
-                              href="https://www.instagram.com/kich555/"
-                            >
-                              Cathy_the_queen
-                            </a>
-                          </div>
-                          <div className="small-basic">Everybody wants me</div>
-                        </div>
-                      </div>
-                      <div>
-                        <a className="change-btn">팔로우</a>
-                      </div>
+                  <div>
+                    <a className="change-btn">팔로우</a>
+                  </div>
+                </div>
+                <div className="article-header">
+                  <div className="article-div">
+                    <div className="article-header-profile">
+                      <a
+                        className="article-header-profile-link"
+                        href="https://www.instagram.com/kich555/"
+                      >
+                        <img
+                          className="article-header-profile-img"
+                          src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div className="span-box">
+                      <span className="bold">Cathy_the_queen</span>
+                      <span className="small-basic">Everybody wants me</span>
                     </div>
                   </div>
-                  <div className="aside-header">
-                    <div className="aside-header-profile">
-                      <div className="aside-header-profile-profile">
-                        <div className="aside-header-profile-img">
-                          <a
-                            className="aside-header-profile-img-b"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            <img
-                              className="aside-header-profile-img-a-img"
-                              src="https://images.unsplash.com/photo-1548247416-ec66f4900b2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=963&q=80"
-                              alt="profle"
-                            />
-                          </a>
-                        </div>
-                        <div className="aside-header-profile-text">
-                          <div className="aside-header-profile-text-name">
-                            <a
-                              className="bold"
-                              href="https://www.instagram.com/kich555/"
-                            >
-                              Harry_the_cat
-                            </a>
-                          </div>
-                          <div className="small-basic">I'm hungry</div>
-                        </div>
-                      </div>
-                      <div>
-                        <a className="change-btn">팔로우</a>
-                      </div>
+                  <div>
+                    <a className="change-btn">팔로우</a>
+                  </div>
+                </div>
+
+                <div className="article-header">
+                  <div className="article-div">
+                    <div className="article-header-profile">
+                      <a
+                        className="article-header-profile-link"
+                        href="https://www.instagram.com/kich555/"
+                      >
+                        <img
+                          className="article-header-profile-img"
+                          src="https://images.unsplash.com/photo-1548247416-ec66f4900b2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=963&q=80"
+                          alt=""
+                        />
+                      </a>
                     </div>
+                    <div className="span-box">
+                      <span className="bold">Harry_the_cat</span>
+                      <span className="small-basic">I'm hungry</span>
+                    </div>
+                  </div>
+                  <div>
+                    <a className="change-btn">팔로우</a>
                   </div>
                 </div>
               </div>

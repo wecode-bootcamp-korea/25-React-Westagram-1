@@ -66,7 +66,8 @@
       .login-form {
         @include flex-column;
         width: 100%;
-        .id {
+        .id,
+        .pw {
           margin: 0 50px 6px;
           padding: 9px 0 7px 8px;
           font-size: 16px;

@@ -4,9 +4,27 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/common.scss';
 class Login extends React.Component {
-  goToMain = () => {
-    this.props.history.push('/main');
+  constructor() {
+    super();
+    this.state = {};
+  }
+  state = {
+    idValue: '',
+    pwValue: '',
   };
+
+  handleInput = e => {
+    this.setState({
+      [e.target.idValue]: e.target.value,
+      [e.target.pwValue]: e.target.value,
+    });
+    console.log(e.target);
+  };
+
+  goToMain = () => {
+    this.props.history.push('/Main-KyungHyun');
+  };
+
   render() {
     return (
       <div className="KyungHyunLogin">
@@ -18,16 +36,22 @@ class Login extends React.Component {
             <form className="login-form" method="POST">
               <input
                 className="id"
-                onkeyup="loginValidation()"
-                type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                type="text"
+                onChange={this.handleInput}
+                value={this.state.idValue}
+                name="idValue"
               />
+              <span>{this.state.idValue}</span>
               <input
-                className="id"
-                onkeyup="loginValidation()"
-                type="password"
+                className="pw"
                 placeholder="비밀번호"
+                type="password"
+                onChange={this.handleInput}
+                value={this.state.pwValue}
+                name="pwValue"
               />
+              <span>{this.state.pwValue}</span>
               <button
                 type="button"
                 onClick={this.goToMain}

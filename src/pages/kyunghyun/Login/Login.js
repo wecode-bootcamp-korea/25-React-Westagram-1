@@ -6,23 +6,56 @@ import '../../../styles/common.scss';
 class Login extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      idValue: '',
+      pwValue: '',
+      isValid: false,
+    };
   }
-  state = {
-    idValue: '',
-    pwValue: '',
+
+  handleIdInput = e => {
+    this.setState({
+      idValue: e.target.value,
+    });
   };
 
-  handleInput = e => {
+  handlepwInput = e => {
     this.setState({
-      [e.target.idValue]: e.target.value,
-      [e.target.pwValue]: e.target.value,
+      pwValue: e.target.value,
     });
-    console.log(e.target);
+  };
+
+  checkValid = () => {
+    const { idValue, pwValue } = this.state;
+    const validId = idValue.includes('@');
+    const validPw = pwValue.length >= 6;
+
+    validId && validPw
+      ? this.setState({ isValid: true })
+      : this.setState({ isValid: false });
+  };
+
+  loginValidation = () => {
+    const { idValue, pwValue } = this.state;
+    const validId = idValue.includes('@');
+    const validPw = pwValue.length >= 6;
+
+    if (validId && validPw) {
+      this.props.history.push('/Main-KyungHyun');
+    }
+
+    if (!validId || !validPw) {
+      this.state.idValue = '';
+      this.state.pwValue = '';
+      this.state.alert =
+        '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.';
+    }
   };
 
   goToMain = () => {
-    this.props.history.push('/Main-KyungHyun');
+    if (this.state.isValid) {
+      this.props.history.push('/Main-KyungHyun');
+    }
   };
 
   render() {
@@ -38,25 +71,25 @@ class Login extends React.Component {
                 className="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 type="text"
-                onChange={this.handleInput}
+                onChange={this.handleIdInput}
+                onKeyUp={this.checkValid}
                 value={this.state.idValue}
                 name="idValue"
               />
-              <span>{this.state.idValue}</span>
+
               <input
                 className="pw"
                 placeholder="비밀번호"
                 type="password"
-                onChange={this.handleInput}
+                onChange={this.handlepwInput}
+                onKeyUp={this.checkValid}
                 value={this.state.pwValue}
                 name="pwValue"
               />
-              <span>{this.state.pwValue}</span>
               <button
+                className={this.state.isValid ? 'valid' : 'login'}
                 type="button"
-                onClick={this.goToMain}
-                className="login"
-                disabled
+                onClick={this.loginValidation}
               >
                 <div>로그인</div>
               </button>
@@ -72,6 +105,7 @@ class Login extends React.Component {
                 </a>
               </div>
             </form>
+            <p>{this.state.alert}</p>
             <a className="forgot-pw" href="https://bit.ly/3k5tzjV" tabIndex={0}>
               비밀번호를 잊으셨나요?
             </a>

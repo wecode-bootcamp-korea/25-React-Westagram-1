@@ -58,11 +58,16 @@
 
   .login__button {
     border: none;
+    background-color: blue;
+    color: white;
+    font-size: 25px;
+  }
+  .login__button--disabled {
+    border: none;
     background-color: #c4e1fb;
     color: white;
     font-size: 25px;
   }
-
   .find-password {
     text-align: center;
     color: #376088;

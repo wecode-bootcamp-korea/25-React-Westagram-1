@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Comment from './Comment';
 import './Main.scss';
 
 class Main extends Component {
@@ -86,23 +87,7 @@ class Main extends Component {
               <b>buzzi_nyang</b>&nbsp; 박버찌 기다려.. 집사가 곧 냥줍 하러
               간다..
             </div>
-            <ul className="commentList">
-              <li className="comment1">
-                <b>rrpec9</b>&nbsp; 아주 사나운 맹수네요.. 미니 호랭이..
-              </li>
-              <li className="comment2">
-                <b>buzzi_nyang</b>&nbsp; 우리 버찌 너무 예쁘죠! 애교냥이에요~
-              </li>
-            </ul>
-            <div className="time">50분 전</div>
-            <div className="commentInput">
-              <input
-                className="comment"
-                type="text"
-                placeholder="댓글 달기..."
-              />
-              <button id="textUpload">게시</button>
-            </div>
+            <Comment />
           </article>
           <div className="mainRight">
             <div className="myProfile">

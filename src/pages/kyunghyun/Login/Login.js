@@ -25,30 +25,26 @@ class Login extends React.Component {
     });
   };
 
-  checkValid = () => {
+  checkValid = e => {
     const { idValue, pwValue } = this.state;
     const validId = idValue.includes('@');
     const validPw = pwValue.length >= 6;
-
     validId && validPw
       ? this.setState({ isValid: true })
       : this.setState({ isValid: false });
   };
 
   loginValidation = () => {
-    const { idValue, pwValue } = this.state;
-    const validId = idValue.includes('@');
-    const validPw = pwValue.length >= 6;
-
-    if (validId && validPw) {
+    this.state.isValid
+      ? this.props.history.push('/Main-KyungHyun')
+      : (this.state.idValue = ''); // 여기서부턴 유효성 검사 추후 추가 예정
+    this.state.pwValue = '';
+    this.state.alert =
+      '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.';
+  };
+  enterValidation = e => {
+    if (e.key === 'Enter' && this.state.isValid) {
       this.props.history.push('/Main-KyungHyun');
-    }
-
-    if (!validId || !validPw) {
-      this.state.idValue = '';
-      this.state.pwValue = '';
-      this.state.alert =
-        '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.';
     }
   };
 
@@ -73,6 +69,7 @@ class Login extends React.Component {
                 type="text"
                 onChange={this.handleIdInput}
                 onKeyUp={this.checkValid}
+                onKeyDown={this.enterValidation}
                 value={this.state.idValue}
                 name="idValue"
               />
@@ -83,6 +80,7 @@ class Login extends React.Component {
                 type="password"
                 onChange={this.handlepwInput}
                 onKeyUp={this.checkValid}
+                onKeyDown={this.enterValidation}
                 value={this.state.pwValue}
                 name="pwValue"
               />

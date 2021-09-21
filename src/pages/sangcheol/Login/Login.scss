@@ -48,11 +48,18 @@
     border-radius: 10px;
     font-size: 25px;
     font-weight: bold;
-    background-color: #2f95f6;
     color: white;
+    background-color: #2f95f6;
   }
 
-  .off-button {
+  .offButton {
+    height: 65px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
     cursor: not-allowed;
     background-color: #c4e1fb;
   }

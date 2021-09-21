@@ -96,6 +96,7 @@ class Main extends React.Component {
                   <img
                     className="smallHeart_img"
                     src="./images/sangcheol/heart.png"
+                    alt="qwe"
                   />
                 </div>
 

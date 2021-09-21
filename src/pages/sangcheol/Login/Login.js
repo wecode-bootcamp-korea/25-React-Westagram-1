@@ -7,18 +7,19 @@ class Login extends React.Component {
   state = {
     id: '',
     password: '',
+    offButton: false,
   };
 
   handleIdInput = e => {
     this.setState({
-      [this.state.id]: e.target.value,
+      id: e.target.value,
     });
     console.log(e.target.value);
   };
 
   handlePasswordInput = e => {
     this.setState({
-      [this.state.password]: e.target.value,
+      password: e.target.value,
     });
     console.log(e.target.value);
   };
@@ -27,13 +28,24 @@ class Login extends React.Component {
     this.props.history.push('/Main-SangCheol');
   };
 
+  handleInputText = e => {
+    const { id, password } = this.state;
+    id.includes('@') && password.length >= 5
+      ? this.setState({
+          offButton: true,
+        })
+      : this.setState({
+          offButton: false,
+        });
+  };
+
   render() {
     return (
       <div className=" sangcheol-Login">
         <section id="section">
           <div id="inner">
             <h1 id="logo-text">Westagram</h1>
-            <div className="input-box">
+            <form onChange={this.handleInputText} className="input-box">
               <input
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -46,13 +58,16 @@ class Login extends React.Component {
                 className="input-box_password"
                 onChange={this.handlePasswordInput}
               />
-              <button className="btnon off-button" onClick={this.goToMain}>
+              <button
+                className={this.state.offButton ? 'btnon' : 'offButton'}
+                onClick={this.goToMain}
+              >
                 로그인
               </button>
               <a id="footer_link" href="Null">
                 비밀번호를 잊으셨나요 ?
               </a>
-            </div>
+            </form>
           </div>
         </section>
       </div>

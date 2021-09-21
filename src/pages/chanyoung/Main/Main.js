@@ -8,9 +8,9 @@ import {
   faComment,
   faUpload,
   faBookmark,
-  faBackspace,
 } from '@fortawesome/free-solid-svg-icons';
 import './Main.scss';
+import Comment from './components/feeds/Comment';
 
 class Main extends React.Component {
   render() {
@@ -92,51 +92,7 @@ class Main extends React.Component {
                 <span className="feeds-main__like__count">10</span>명이
                 좋아합니다
               </div>
-              <div className="feeds-main__comments">
-                <ul>
-                  <li className="feeds-main__comments__content">
-                    <div className="comment-wrapper">
-                      <span className="username">cannon_mj</span>
-                      위워크에서 진행한 베이킹 클래스
-                      <FontAwesomeIcon
-                        className="i feeds-main__comments__delete"
-                        icon={faBackspace}
-                      />
-                    </div>
-                    <FontAwesomeIcon
-                      className="i feeds-main__comments__heart"
-                      icon={faHeart}
-                    />
-                  </li>
-                  <li className="feeds-main__comments__content">
-                    <div className="comment-wrapper">
-                      <span className="username">neceosecius</span>
-                      거봐 좋았자나~~~~~😄
-                      <FontAwesomeIcon
-                        className="i feeds-main__comments__delete"
-                        icon={faBackspace}
-                      />
-                    </div>
-                    <FontAwesomeIcon
-                      className="i feeds-main__comments__heart"
-                      icon={faHeart}
-                    />
-                  </li>
-                </ul>
-              </div>
-              <div className="feeds-main__comment-time">42분전</div>
-              <form className="feeds-form">
-                <input
-                  className="feeds-form__input"
-                  type="text"
-                  placeholder="댓글 달기..."
-                />
-                <input
-                  className="feeds-form__submit"
-                  type="submit"
-                  value="게시"
-                />
-              </form>
+              <Comment />
             </div>
           </section>
           <section className="side">

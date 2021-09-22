@@ -1,19 +1,40 @@
 import { Component } from 'react';
-import Addcomment from './Addcomment';
+import UploadComment from './UploadComment';
 
 class Comment extends Component {
   constructor() {
     super();
     this.state = {
       inputVal: '',
-      commentList: [],
+      commentList: [
+        {
+          id: 1,
+          name: 'rrpec9',
+          content: '아기맹수 버찌녀석',
+        },
+        {
+          id: 2,
+          name: 'v_ddabong_v',
+          content: '집사가 기다린다 버찌야',
+        },
+      ],
     };
   }
 
   handleInput = e => {
+    const newArr = [
+      ...this.state.commentList,
+      {
+        id: this.state.commentList.length + 1,
+        name: 'buzzi_nyang',
+        content: e.target.value,
+      },
+    ];
+    console.log(newArr[2]);
     this.setState({
-      inputVal: e.target.value,
+      commentList: newArr,
     });
+    console.log(newArr[2]);
   };
 
   addMyComment = () => {
@@ -28,20 +49,9 @@ class Comment extends Component {
     return (
       <>
         <ul className="commentList">
-          {this.state.commentList.map((comment, idx) => {
-            return (
-              <li key={idx}>
-                <b>buzzi_nyang</b>&nbsp;
-                {comment}
-              </li>
-            );
+          {this.state.commentList.map((comment, index) => {
+            return <UploadComment comment={comment} idx={index} />;
           })}
-          {/* <li className="comment1">
-            <b>rrpec9</b>&nbsp; 아주 사나운 맹수네요.. 미니 호랭이..
-          </li>
-          <li className="comment2">
-            <b>buzzi_nyang</b>&nbsp; 우리 버찌 너무 예쁘죠! 애교냥이에요~
-          </li> */}
         </ul>
         <div className="time">50분 전</div>
         <form className="commentInput">

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Comment from './Comment';
+import Comment from './components/Comment';
 import './Main.scss';
 
 class Main extends Component {
@@ -10,7 +10,11 @@ class Main extends Component {
           <nav className="mainNav">
             <div className="leftBar">
               <span className="catstaLogo">
-                <img src="./images/miyeon/catFoot.png" className="catFoot" />
+                <img
+                  src="./images/miyeon/catFoot.png"
+                  className="catFoot"
+                  alt="catFoot1"
+                />
               </span>
               <a href="/Main-MiYeon" className="catstaText">
                 <h1 className="catstaLogo2">catstagram</h1>

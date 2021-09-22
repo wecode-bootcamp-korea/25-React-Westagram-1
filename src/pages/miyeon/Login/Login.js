@@ -33,7 +33,7 @@ class Login extends React.Component {
 
   goToMain = () => {
     const { idVal, pwVal } = this.state;
-    idVal == 'buzzi_nyang@happy' && pwVal == '1234'
+    idVal === 'buzzi_nyang@happy' && pwVal === '123456'
       ? this.props.history.push('/Main-MiYeon')
       : alert('캣스타그램 계정 주인만 로그인할 수 있습니다');
   };
@@ -45,7 +45,11 @@ class Login extends React.Component {
           <div className="loginBox">
             <h1 className="catstaLogo1">
               catstagram
-              <img src="./images/miyeon/catFoot.png" className="catFoot" />
+              <img
+                src="./images/miyeon/catFoot.png"
+                className="catFoot"
+                alt="catFoot2"
+              />
             </h1>
             <div>
               <form onChange={this.buttonColorChange}>

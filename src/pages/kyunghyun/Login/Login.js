@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import './Login.css'
 import './Login.scss';
 import '../../../styles/common.scss';
 class Login extends React.Component {
@@ -19,7 +18,7 @@ class Login extends React.Component {
     });
   };
 
-  handlepwInput = e => {
+  handlePwInput = e => {
     this.setState({
       pwValue: e.target.value,
     });
@@ -48,13 +47,9 @@ class Login extends React.Component {
     }
   };
 
-  goToMain = () => {
-    if (this.state.isValid) {
-      this.props.history.push('/Main-KyungHyun');
-    }
-  };
-
   render() {
+    const { idValue, pwValue } = this.state;
+    console.log(idValue);
     return (
       <div className="KyungHyunLogin">
         <header>
@@ -70,7 +65,7 @@ class Login extends React.Component {
                 onChange={this.handleIdInput}
                 onKeyUp={this.checkValid}
                 onKeyDown={this.enterValidation}
-                value={this.state.idValue}
+                value={idValue}
                 name="idValue"
               />
 
@@ -78,10 +73,10 @@ class Login extends React.Component {
                 className="pw"
                 placeholder="비밀번호"
                 type="password"
-                onChange={this.handlepwInput}
+                onChange={this.handlePwInput}
                 onKeyUp={this.checkValid}
                 onKeyDown={this.enterValidation}
-                value={this.state.pwValue}
+                value={pwValue}
                 name="pwValue"
               />
               <button

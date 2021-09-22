@@ -294,10 +294,10 @@
                           }
                         }
                       }
-                      textarea {
-                        // width: 503px;
+                      #textarea {
+                        width: 503px;
                         height: 18px;
-                        border: 0;
+                        border: none;
                         outline: 0;
                         line-height: 18px;
                         resize: none;
@@ -307,8 +307,10 @@
                       }
                     }
                     .text-up-btn {
-                      padding: 20px 0;
+                      padding: 18px 0;
                       font-size: 14px;
+                      border: none;
+                      background-color: #fff;
                       @include bluebtn;
                     }
                   }

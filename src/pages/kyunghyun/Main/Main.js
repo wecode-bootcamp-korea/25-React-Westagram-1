@@ -1,8 +1,26 @@
 import React from 'react';
-// import "./Main.css"
 import './Main.scss';
+import CommentForm from './comment/CommentForm';
+import CommentList from './comment/CommentList';
 // import "../../style/common.scss";
 class Main extends React.Component {
+  id = 0;
+
+  state = {
+    information: [],
+  };
+
+  handleCreate = data => {
+    const { information } = this.state;
+    this.setState({
+      information: information.concat(
+        Object.assign({}, data, {
+          id: this.idd++,
+        })
+      ),
+    });
+  };
+
   render() {
     return (
       <div className="KyungHyunMain">
@@ -209,36 +227,15 @@ class Main extends React.Component {
                       <span className="basic">하늘은 영어로 sky...</span>
                       <a className="view-more">더 보기</a>
                     </div>
-                    <div className="article-text3" />
+                    <div className="article-text3">
+                      <CommentList data={this.state.information} />
+                    </div>
                     <div className="posted-time">
                       <span className="time">12시간 전</span>
                     </div>
                     <section className="comment">
                       <div className="comment-box">
-                        <div className="comment-box-form">
-                          <div className="comment-box-form-box">
-                            <div className="article-header-profile">
-                              <a
-                                className="article-header-profile-link"
-                                href="https://www.instagram.com/kich555/"
-                              >
-                                <img
-                                  className="article-header-profile-img"
-                                  src="https://images.velog.io/images/kich555/profile/5ed64ce8-0f40-49a4-bcc2-ed8d4f7649c3/social.jpeg"
-                                  alt=""
-                                />
-                              </a>
-                            </div>
-                            <textarea
-                              id="textarea"
-                              placeholder="댓글 달기..."
-                              defaultValue={''}
-                            />
-                          </div>
-                          <a className="text-up-btn" onclick="pushComment()">
-                            게시
-                          </a>
-                        </div>
+                        <CommentForm onCreate={this.handleCreate} />
                       </div>
                     </section>
                   </div>

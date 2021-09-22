@@ -1,7 +1,6 @@
 import React from 'react';
-import Login from './Login';
 
-class loginValidation extends React.Component {
+class LoginForm extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -29,4 +28,4 @@ class loginValidation extends React.Component {
   };
 }
 
-export default loginValidation;
+export default LoginForm;

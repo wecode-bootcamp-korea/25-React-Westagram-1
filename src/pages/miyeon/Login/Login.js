@@ -24,7 +24,7 @@ class Login extends React.Component {
     });
   }; // pw값 state에 저장
 
-  buttonColorChange = e => {
+  buttonColorChange = () => {
     const { idVal, pwVal } = this.state;
     idVal.includes('@') && pwVal.length >= 5
       ? this.setState({ buttonColor: true })
@@ -52,7 +52,7 @@ class Login extends React.Component {
               />
             </h1>
             <div>
-              <form onChange={this.buttonColorChange}>
+              <form onChange={this.buttonColorChange} onSubmit={this.goToMain}>
                 <input
                   type="text"
                   id="idInput"
@@ -67,7 +67,6 @@ class Login extends React.Component {
                 />
                 <button
                   className={this.state.buttonColor ? 'loginOn' : 'loginOff'}
-                  onClick={this.goToMain}
                 >
                   로그인
                 </button>

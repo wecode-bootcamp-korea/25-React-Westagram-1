@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import UploadComment from './UploadComment';
 
-class Comment extends Component {
+export default class Comment extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,19 +22,18 @@ class Comment extends Component {
   }
 
   handleInput = e => {
+    const { commentList } = this.state;
     const newArr = [
-      ...this.state.commentList,
+      ...commentList,
       {
-        id: this.state.commentList.length + 1,
+        id: commentList.length + 1,
         name: 'buzzi_nyang',
         content: e.target.value,
       },
     ];
-    console.log(newArr[2]);
     this.setState({
       commentList: newArr,
     });
-    console.log(newArr[2]);
   };
 
   addMyComment = () => {
@@ -49,12 +48,12 @@ class Comment extends Component {
     return (
       <>
         <ul className="commentList">
-          {this.state.commentList.map((comment, index) => {
-            return <UploadComment comment={comment} idx={index} />;
+          {this.state.commentList.map(comm => {
+            return <UploadComment comment={comm} />;
           })}
         </ul>
         <div className="time">50분 전</div>
-        <form className="commentInput">
+        <form className="commentInput" onSubmit={this.addMyComment}>
           <input
             className="comment"
             type="text"
@@ -63,7 +62,6 @@ class Comment extends Component {
           />
           <button
             id="textUpload"
-            onClick={this.addMyComment}
             style={{
               color: this.state.inputVal.length > 0 ? '#0095f6' : '#b9def7',
             }}
@@ -75,5 +73,3 @@ class Comment extends Component {
     );
   }
 }
-
-export default Comment;

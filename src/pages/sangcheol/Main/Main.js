@@ -7,6 +7,27 @@ import './footer.scss';
 
 class Main extends React.Component {
   // class 명은 항상 대문자로 시작.
+  constructor() {
+    super();
+
+    this.state = {
+      inputKeyword: '',
+      commentBox: [],
+    };
+  }
+  handleInput = e => {
+    this.setState({
+      inputKeyword: e.target.value,
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({
+      commentBox: this.state.commentBox.concat([this.state.inputKeyword]),
+    });
+  };
+
   render() {
     // render 는 화면에 출력시키겠다는 의미
     return (
@@ -88,19 +109,28 @@ class Main extends React.Component {
                   <span>#할수있다</span>
                 </span>
 
-                <div className="main-icon-like-text-write_commentbox">
-                  <p className="userName">Xangcheol</p>
-                  <div className="main-icon-like-text-write-subtext">
-                    위코드에 들어온 순간부터 나는 개발자다 !
-                  </div>
-                  <img
-                    className="smallHeart_img"
-                    src="./images/sangcheol/heart.png"
-                    alt="qwe"
-                  />
-                </div>
+                <ul className="main-icon-like-text-write_commentbox">
+                  <li>
+                    <span className="userName">Xangcheol</span>{' '}
+                    <span className="main-icon-like-text-write-subtext">
+                      {' '}
+                      위코드에 들어온 순간부터 나는 개발자다 !
+                    </span>
+                  </li>
+                </ul>
 
-                <div className="main-icon-like-text-write_comment"></div>
+                <ul className="main-icon-like-text-write_comment">
+                  {this.state.commentBox.map(el => {
+                    return (
+                      <li>
+                        <span className="userName">Xangcheol</span>
+                        <span className="main-icon-like-text-write-subtext">
+                          {el}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
 
                 <div className="main-icon-like-text-write-footer">
                   {' '}
@@ -109,14 +139,15 @@ class Main extends React.Component {
               </div>
             </div>
 
-            <div className="main_comment">
+            <form className="main_comment" onSubmit={this.handleSubmit}>
               <input
                 className="main_comment_text"
                 type="text"
                 placeholder="댓글 달기..."
+                onChange={this.handleInput}
               />
               <button className="main_comment_submit">게시</button>
-            </div>
+            </form>
           </div>
 
           <div className="main-right">

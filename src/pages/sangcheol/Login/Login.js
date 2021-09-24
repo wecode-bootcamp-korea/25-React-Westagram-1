@@ -25,7 +25,10 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    this.props.history.push('/Main-SangCheol');
+    const { id, password } = this.state;
+    id === 'zlrz002@naver.com' && password === 'tkdas6708@'
+      ? this.props.history.push('/Main-SangCheol')
+      : alert('아이디와 비밀번호를 확인헤주세요');
   };
 
   handleInputText = e => {
@@ -53,7 +56,7 @@ class Login extends React.Component {
                 onChange={this.handleIdInput}
               />
               <input
-                type="text"
+                type="password"
                 placeholder="비밀번호"
                 className="input-box_password"
                 onChange={this.handlePasswordInput}

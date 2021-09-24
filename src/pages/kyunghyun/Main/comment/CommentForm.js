@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CommentForm extends React.Component {
+class CommentForm extends Component {
   state = {
     comment: '',
   };

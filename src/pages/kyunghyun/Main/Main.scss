@@ -32,6 +32,7 @@
 @mixin article-texbox {
   padding: 0 16px;
   margin-bottom: 8px;
+  font-size: 14px;
 }
 
 @mixin bluebtn {
@@ -44,6 +45,11 @@
   font-size: 12px;
   counter-reset: #262626;
   font-weight: 600;
+}
+button {
+  border: none;
+  background-color: #fff;
+  @include bluebtn;
 }
 
 .KyungHyunMain {
@@ -253,6 +259,14 @@
               }
               .article-text3 {
                 @include article-texbox;
+                .article-comment {
+                  display: flex;
+                  justify-content: space-between;
+                  .comment-update {
+                    border: 1px solid #dbdbdb;
+                    width: 100%;
+                  }
+                }
               }
               .posted-time {
                 padding-left: 16px;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/common.scss';
+import LoginForm from './LoginForm';
 class Login extends React.Component {
   constructor() {
     super();
@@ -49,7 +50,6 @@ class Login extends React.Component {
 
   render() {
     const { idValue, pwValue } = this.state;
-    console.log(idValue);
     return (
       <div className="KyungHyunLogin">
         <header>

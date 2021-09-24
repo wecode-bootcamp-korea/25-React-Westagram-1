@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Main.scss';
 import CommentForm from './comment/CommentForm';
 import CommentList from './comment/CommentList';
 // import "../../style/common.scss";
-class Main extends React.Component {
-  id = 0;
+class Main extends Component {
+  id = 2;
 
   state = {
-    information: [],
+    information: [
+      {
+        id: 0,
+        comment: 'Beautiful weather',
+      },
+      {
+        id: 1,
+        comment: 'What a nice pic!! Who took the picture???',
+      },
+    ],
   };
 
   handleCreate = data => {
@@ -15,9 +24,34 @@ class Main extends React.Component {
     this.setState({
       information: information.concat(
         Object.assign({}, data, {
-          id: this.idd++,
+          id: this.id++,
         })
       ),
+    });
+  };
+
+  handleRemove = id => {
+    const { information } = this.state;
+    this.setState({
+      information: information.filter(info => info.id !== id),
+      // info.id가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+      // 선택한 'id'를 제외한 나머지 id들로 새로운 배열을 만들어서 표시함
+      // info.id 가 id 인 것을 제거함
+    });
+  };
+
+  handleUpdate = (id, data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.map(info => {
+        if (info.id === id) {
+          return {
+            id,
+            ...data,
+          };
+        }
+        return info;
+      }),
     });
   };
 
@@ -228,7 +262,11 @@ class Main extends React.Component {
                       <a className="view-more">더 보기</a>
                     </div>
                     <div className="article-text3">
-                      <CommentList data={this.state.information} />
+                      <CommentList
+                        data={this.state.information}
+                        onRemove={this.handleRemove}
+                        onUpdate={this.handleUpdate}
+                      />
                     </div>
                     <div className="posted-time">
                       <span className="time">12시간 전</span>

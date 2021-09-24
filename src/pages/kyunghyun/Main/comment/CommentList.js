@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CommentInfo from './CommentInfo';
 
-class CommentList extends React.Component {
+class CommentList extends Component {
   static defaultProps = {
     data: [],
   };
 
   render() {
-    const { data } = this.props;
+    const { data, onRemove, onUpdate } = this.props;
 
-    const list = data.map(info => <CommentInfo info={info} key={info.id} />);
-    return <div>{list}</div>;
+    const list = data.map(info => (
+      <CommentInfo
+        onUpdate={onUpdate}
+        onRemove={onRemove}
+        info={info}
+        key={info.id}
+      />
+    ));
+    return <>{list}</>;
   }
 }
 

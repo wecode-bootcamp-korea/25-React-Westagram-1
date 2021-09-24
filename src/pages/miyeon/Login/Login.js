@@ -31,11 +31,12 @@ class Login extends React.Component {
       : this.setState({ buttonColor: false });
   };
 
-  goToMain = () => {
+  goToMain = e => {
     const { idVal, pwVal } = this.state;
     idVal === 'buzzi_nyang@happy' && pwVal === '123456'
       ? this.props.history.push('/Main-MiYeon')
-      : alert('캣스타그램 계정 주인만 로그인할 수 있습니다');
+      : e.preventDefault();
+    alert('캣스타그램 계정 주인만 로그인할 수 있습니다');
   };
 
   render() {

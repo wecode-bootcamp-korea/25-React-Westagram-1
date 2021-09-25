@@ -65,6 +65,49 @@ body {
         .centerBar {
           position: relative;
 
+          .searchOff {
+            display: none;
+          }
+
+          .searchOn {
+            position: absolute;
+            top: 29px;
+            right: -26px;
+            width: 270px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: white;
+            z-index: 9999;
+
+            .searchUsersul {
+              padding-left: 0;
+              margin: 0 auto;
+
+              .searchUsers {
+                display: flex;
+                align-items: center;
+                padding-left: 13px;
+                border-bottom: 1px solid #dbdbdb;
+                list-style: none;
+
+                &:hover {
+                  background-color: #fafafa;
+                }
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 100px;
+                }
+
+                .searchUsersInfo {
+                  display: inline-block;
+                  margin-left: 13px;
+                }
+              }
+            }
+          }
+
           .searchBar {
             width: 215px;
             height: 28px;
@@ -90,6 +133,7 @@ body {
         }
 
         .rightBar {
+          position: relative;
           display: flex;
           justify-content: flex-end;
 
@@ -98,6 +142,47 @@ body {
             height: 25px;
             margin-right: 20px;
             cursor: pointer;
+          }
+
+          .myProfileOff {
+            display: none;
+          }
+
+          .myProfileOn {
+            position: absolute;
+            top: 29px;
+            right: -26px;
+            width: 160px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: white;
+            z-index: 9999;
+
+            .myProfileList {
+              margin: 0 auto;
+              padding: 0;
+              list-style: none;
+
+              li {
+                display: flex;
+                align-items: center;
+                padding: 13.3px 20px;
+
+                &:hover {
+                  background-color: #fafafa;
+                }
+
+                img {
+                  width: 18px;
+                  height: 18px;
+                  margin-right: 12px;
+                }
+
+                &:nth-child(3) {
+                  border-bottom: 1px solid #dbdbdb;
+                }
+              }
+            }
           }
         }
       }

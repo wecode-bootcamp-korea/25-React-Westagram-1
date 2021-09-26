@@ -30,7 +30,7 @@ export default class Comment extends Component {
 
   addMyComment = e => {
     e.preventDefault();
-    const { commentList, inputVal, inputVal2 } = this.state;
+    const { commentList, inputVal } = this.state;
     const newArr = [
       ...commentList,
       {

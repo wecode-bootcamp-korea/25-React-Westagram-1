@@ -5,7 +5,7 @@ class NavUserSearch extends Component {
     const { usersInfo } = this.props;
     return (
       <li className="searchUsers" key={usersInfo.no}>
-        <img src={usersInfo.profileImg} />
+        <img src={usersInfo.profileImg} alt="userProfileImg" />
         <p className="searchUsersInfo">
           <b>{usersInfo.id}</b>
           <br /> {usersInfo.description}

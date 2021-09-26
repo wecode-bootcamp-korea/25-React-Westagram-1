@@ -22,7 +22,6 @@ export default class Comment extends Component {
   }
 
   handleInput = e => {
-    const { commentList } = this.state;
     this.setState({
       inputVal: e.target.value,
     });
@@ -47,12 +46,23 @@ export default class Comment extends Component {
     // input창의 value 텍스트를 지움
   };
 
+  deleteComment = e => {
+    const delete_comment = this.state.commentList.filter(
+      comment => comment.id == e - 1
+    );
+    this.setState({
+      commentList: delete_comment,
+    });
+  };
+
   render() {
     return (
       <>
         <ul className="commentList">
           {this.state.commentList.map(comm => {
-            return <UploadComment comment={comm} />;
+            return (
+              <UploadComment comment={comm} deleteCom={this.deleteComment} />
+            );
           })}
         </ul>
         <div className="time">50분 전</div>

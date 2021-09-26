@@ -78,6 +78,8 @@ class CenterBar extends Component {
                     .includes(this.state.searchKeyword.toLowerCase())
                 ) {
                   return peopleArr;
+                } else {
+                  return '일치하는 없없습습니니다다 ';
                 }
               })
               .map(userArr => {

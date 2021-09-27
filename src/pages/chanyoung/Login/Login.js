@@ -6,7 +6,7 @@ import LoginForm from './components/LoginForm';
 class Login extends React.Component {
   goToMain = (isBtn, e) => {
     e.preventDefault();
-    if (isBtn) this.props.history.push('/Main-ChanYoung');
+    isBtn && this.props.history.push('/Main-ChanYoung');
   };
 
   render() {

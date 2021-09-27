@@ -9,6 +9,7 @@ export default class Main extends Component {
     this.state = {
       heartBtn: false,
       profileLayer: false,
+      likeNumber: 2,
     };
   }
 
@@ -17,6 +18,17 @@ export default class Main extends Component {
       heartBtn: !this.state.heartBtn,
     });
   }; // 좋아요 기능 - 하트 클릭시 진한 컬러 하트로 변경
+
+  likeNumberPlus = () => {
+    const { heartBtn } = this.state;
+    heartBtn === true
+      ? this.setState({
+          likeNumber: this.state.likeNumber - 1,
+        })
+      : this.setState({
+          likeNumber: this.state.likeNumber + 1,
+        });
+  }; // 좋아요 기능 - 하트 클릭시 좋아요 수 변경
 
   clickProfile = () => {
     this.setState({
@@ -113,6 +125,7 @@ export default class Main extends Component {
                         : './images/miyeon/heart.png'
                     }
                     alt="heart2"
+                    onClick={this.likeNumberPlus}
                   />
                 </span>
                 <img src="./images/miyeon/comment.png" alt="comment" />
@@ -135,7 +148,8 @@ export default class Main extends Component {
                 />
               </div>
               <div className="likeWho">
-                <b>buzzi_nyang</b>님 <b>외 2명이</b> 좋아합니다.
+                <b>buzzi_nyang</b>님 <b>외 {this.state.likeNumber}명이</b>
+                좋아합니다.
               </div>
             </div>
             <div className="feedContent">

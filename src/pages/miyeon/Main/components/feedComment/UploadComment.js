@@ -15,7 +15,7 @@ export default class UploadComment extends Component {
   }; // 좋아요 기능 - 하트 클릭시 진한 컬러 하트로 변경
 
   render() {
-    const { comment, deleteCom } = this.props;
+    const { comment, deleteComment } = this.props;
     return (
       <>
         <li className="commentLi" key={comment.id}>
@@ -37,7 +37,7 @@ export default class UploadComment extends Component {
               &nbsp;&nbsp;
               <img
                 src="./images/miyeon/trash.png"
-                onClick={deleteCom}
+                onClick={() => deleteComment(comment.id)}
                 alt="deleteComment"
               />
             </span>

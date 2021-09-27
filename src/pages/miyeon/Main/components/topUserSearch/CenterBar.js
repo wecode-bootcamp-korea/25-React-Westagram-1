@@ -50,12 +50,6 @@ class CenterBar extends Component {
     });
   };
 
-  searchBar = () => {
-    this.setState({
-      searchLayer: !this.state.searchLayer,
-    });
-  }; // input을 클릭하면 user 리스트창 off
-
   render() {
     return (
       <div className="centerBar">
@@ -64,7 +58,11 @@ class CenterBar extends Component {
           type="text"
           placeholder="검색"
           onChange={this.topInputLayer}
-          onClick={this.searchBar}
+          onFocus={e => {
+            this.setState({
+              searchLayer: !this.state.searchLayer,
+            }); // input을 클릭하면 user 리스트창 off
+          }}
         />
         <div className={this.state.searchLayer ? 'searchOn' : 'searchOff'}>
           <ul className="searchUsersul">
@@ -78,8 +76,6 @@ class CenterBar extends Component {
                     .includes(this.state.searchKeyword.toLowerCase())
                 ) {
                   return peopleArr;
-                } else {
-                  return '일치하는 없없습습니니다다 ';
                 }
               })
               .map(userArr => {

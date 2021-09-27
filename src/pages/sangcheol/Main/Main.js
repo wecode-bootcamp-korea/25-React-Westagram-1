@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from './Components/Comment';
 
 import './Main.scss';
 import './Main-section.scss';
@@ -15,6 +16,7 @@ class Main extends React.Component {
       commentBox: [],
     };
   }
+
   handleInput = e => {
     this.setState({
       inputKeyword: e.target.value,
@@ -23,12 +25,16 @@ class Main extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if (this.state.inputKeyword.length === 0) return;
+
     this.setState({
-      commentBox: this.state.commentBox.concat([this.state.inputKeyword]),
+      commentBox: this.state.commentBox.concat(this.state.inputKeyword),
+      inputKeyword: '',
     });
   };
 
   render() {
+    console.log(this.state);
     // render 는 화면에 출력시키겠다는 의미
     return (
       <div className="sangcheol-Main">
@@ -111,18 +117,17 @@ class Main extends React.Component {
 
                 <ul className="main-icon-like-text-write_commentbox">
                   <li>
-                    <span className="userName">Xangcheol</span>{' '}
+                    <span className="userName">Xangcheol</span>
                     <span className="main-icon-like-text-write-subtext">
-                      {' '}
                       위코드에 들어온 순간부터 나는 개발자다 !
                     </span>
                   </li>
                 </ul>
 
                 <ul className="main-icon-like-text-write_comment">
-                  {this.state.commentBox.map(el => {
+                  {this.state.commentBox.map((el, idx) => {
                     return (
-                      <li>
+                      <li key={idx}>
                         <span className="userName">Xangcheol</span>
                         <span className="main-icon-like-text-write-subtext">
                           {el}
@@ -132,22 +137,14 @@ class Main extends React.Component {
                   })}
                 </ul>
 
-                <div className="main-icon-like-text-write-footer">
-                  {' '}
-                  1시간 전
-                </div>
+                <div className="main-icon-like-text-write-footer">1시간 전</div>
               </div>
             </div>
-
-            <form className="main_comment" onSubmit={this.handleSubmit}>
-              <input
-                className="main_comment_text"
-                type="text"
-                placeholder="댓글 달기..."
-                onChange={this.handleInput}
-              />
-              <button className="main_comment_submit">게시</button>
-            </form>
+            <Comment
+              inputKeyword={this.state.inputKeyword}
+              handleInput={this.handleInput}
+              handleSubmit={this.handleSubmit}
+            />
           </div>
 
           <div className="main-right">

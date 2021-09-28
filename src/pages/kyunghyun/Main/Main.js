@@ -1,61 +1,64 @@
 import React, { Component } from 'react';
-import './Main.scss';
-import CommentForm from './comment/CommentForm';
-import CommentList from './comment/CommentList';
+// import CommentForm from './comment/CommentForm';
+// import CommentList from './comment/CommentList';
 import FootList from './foot/FootList';
+import FeedList from './feed/FeedList';
+import AsideList from './aside/AsideList';
+import HeadList from './header/HeadList';
+import './Main.scss';
 // import "../../style/common.scss";
 class Main extends Component {
-  id = 3;
+  // id = 3;
 
-  componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json')
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          information: res.CL,
-        });
-      });
-  } // json파일 패치하기
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/data/commentData.json')
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       this.setState({
+  //         information: res.CL,
+  //       });
+  //     });
+  // } // json파일 패치하기
 
-  state = {
-    information: [], // 댓글 데이터가 들어갈 배열
-  };
+  // state = {
+  //   information: [], // 댓글 데이터가 들어갈 배열
+  // };
 
-  handleCreate = data => {
-    const { information } = this.state;
-    this.setState({
-      information: information.concat(
-        Object.assign({}, data, {
-          id: this.id++,
-        }) // 비어있는 객체{}에 data를 집어넣고,   id: this.id++,도 집어넣기 or ...data, id:  this.id++; 해도 됨 = 불변성 유지
-      ),
-    });
-  }; // 댓글 데이터 생성하는 함수 : data (CommentForm의 state.comment) 를 파라미터로 받아 concat/Object.assign으로 생성한 새로운 information배열을 가지고, setState로 State변경
+  // handleCreate = data => {
+  //   const { information } = this.state;
+  //   this.setState({
+  //     information: information.concat(
+  //       Object.assign({}, data, {
+  //         id: this.id++,
+  //       }) // 비어있는 객체{}에 data를 집어넣고,   id: this.id++,도 집어넣기 or ...data, id:  this.id++; 해도 됨 = 불변성 유지
+  //     ),
+  //   });
+  // }; // 댓글 데이터 생성하는 함수 : data (CommentForm의 state.comment) 를 파라미터로 받아 concat/Object.assign으로 생성한 새로운 information배열을 가지고, setState로 State변경
 
-  handleRemove = id => {
-    const { information } = this.state;
-    this.setState({
-      information: information.filter(info => info.id !== id),
-      // info.id가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
-      // 선택한 'id'를 제외한 나머지 id들로 새로운 배열을 만들어서 표시함
-      // info.id 가 id 인 것을 제거함
-    });
-  };
+  // handleRemove = id => {
+  //   const { information } = this.state;
+  //   this.setState({
+  //     information: information.filter(info => info.id !== id),
+  //     // info.id가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+  //     // 선택한 'id'를 제외한 나머지 id들로 새로운 배열을 만들어서 표시함
+  //     // info.id 가 id 인 것을 제거함
+  //   });
+  // };
 
-  handleUpdate = (id, data) => {
-    const { information } = this.state;
-    this.setState({
-      information: information.map(info => {
-        if (info.id === id) {
-          return {
-            id,
-            ...data,
-          };
-        }
-        return info;
-      }),
-    });
-  }; // 배열 수정하는 함수 : id 와 data(를 파라미터로 받아 id가 매치되는 배열의 data를 map함수를 사용해 새로운 data로 변환시킴
+  // handleUpdate = (id, data) => {
+  //   const { information } = this.state;
+  //   this.setState({
+  //     information: information.map(info => {
+  //       if (info.id === id) {
+  //         return {
+  //           id,
+  //           ...data,
+  //         };
+  //       }
+  //       return info;
+  //     }),
+  //   });
+  // }; // 배열 수정하는 함수 : id 와 data(를 파라미터로 받아 id가 매치되는 배열의 data를 map함수를 사용해 새로운 data로 변환시킴
 
   render() {
     return (
@@ -105,7 +108,8 @@ class Main extends Component {
             <div className="article-box">
               <div className="story-box">
                 <div className="story-space">
-                  <div className="story-list-box">
+                  <HeadList />
+                  {/* <div className="story-list-box">
                     <a className="story-a" href>
                       <img
                         className="story-img"
@@ -188,99 +192,11 @@ class Main extends Component {
                     <a className="small-basic2" href>
                       nyangnya29
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
-              <div className="feed-box">
-                <article>
-                  <header className="article-header">
-                    <div className="article-div">
-                      <div className="article-header-profile">
-                        <a
-                          className="article-header-profile-link"
-                          href="https://www.instagram.com/kich555/"
-                        >
-                          <img
-                            className="article-header-profile-img"
-                            src="https://images.velog.io/images/kich555/profile/5ed64ce8-0f40-49a4-bcc2-ed8d4f7649c3/social.jpeg"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                      <div className="span-box">
-                        <span>
-                          <a
-                            className="bold"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            kich555
-                          </a>
-                        </span>
-                        <span>
-                          <a
-                            className="sub"
-                            href="https://www.instagram.com/kich555/"
-                          >
-                            Wecode-위코드
-                          </a>
-                        </span>
-                      </div>
-                    </div>
-                    <div className="article-header-button-box">
-                      <a className="article-header-button">...</a>
-                    </div>
-                  </header>
-                  <div className="article-img">
-                    <img
-                      className="article-img"
-                      src="https://images.unsplash.com/photo-1618141782840-40c041c58821?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80"
-                    />
-                  </div>
-                  <div className="article-text">
-                    <section className="article-text-icon">
-                      <div className="right-icon">
-                        <div className="icono-heart span" />
-                        <div className="icono-disqus span" />
-                        <div className="icono-locationArrow span" />
-                      </div>
-                      <div className="icono-bookmarkEmpty span" />
-                    </section>
-                    <section className="article-text1">
-                      <a href="https://www.instagram.com/kich555/">
-                        <img
-                          className="article-text1-img"
-                          src="https://images.unsplash.com/photo-1520315342629-6ea920342047?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-                          alt=""
-                        />
-                      </a>
-                      <span className="bold">nyangnya29</span>
-                      <span className="basic">님 </span>
-                      <span className="bold">외 284명</span>
-                      <span className="basic">이 좋아합니다</span>
-                    </section>
-                    <div className="article-text2">
-                      <span className="bold">kich555</span>
-                      <span className="basic">하늘은 영어로 sky...</span>
-                      <a className="view-more">더 보기</a>
-                    </div>
-                    <div className="article-text3">
-                      <CommentList
-                        data={this.state.information}
-                        onRemove={this.handleRemove}
-                        onUpdate={this.handleUpdate}
-                      />
-                    </div>
-                    <div className="posted-time">
-                      <span className="time">12시간 전</span>
-                    </div>
-                    <section className="comment">
-                      <div className="comment-box">
-                        <CommentForm onCreate={this.handleCreate} />
-                      </div>
-                    </section>
-                  </div>
-                </article>
-              </div>
+              <FeedList />
+              <div className="feed-box"></div>
             </div>
             <aside>
               <div className="article-header">
@@ -332,31 +248,31 @@ class Main extends Component {
                     모두 보기
                   </a>
                 </div>
-                <div className="aside-main-box2">
-                  <div className="article-header">
-                    <div className="article-div">
-                      <div className="article-header-profile">
-                        <a
-                          className="article-header-profile-link"
-                          href="https://www.instagram.com/kich555/"
-                        >
-                          <img
-                            className="article-header-profile-img"
-                            src="https://images.unsplash.com/photo-1631213717462-1cac02745998?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                      <div className="span-box">
-                        <span className="bold">Jonathan265</span>
-                        <span className="small-basic">
-                          Did I turn off the gas stove?
-                        </span>
-                      </div>
+                <AsideList />
+                {/* 
+                <div className="article-header">
+                  <div className="article-div">
+                    <div className="article-header-profile">
+                      <a
+                        className="article-header-profile-link"
+                        href="https://www.instagram.com/kich555/"
+                      >
+                        <img
+                          className="article-header-profile-img"
+                          src="https://images.unsplash.com/photo-1631213717462-1cac02745998?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+                          alt=""
+                        />
+                      </a>
                     </div>
-                    <div>
-                      <a className="change-btn">팔로우</a>
+                    <div className="span-box">
+                      <span className="bold">Jonathan265</span>
+                      <span className="small-basic">
+                        Did I turn off the gas stove?
+                      </span>
                     </div>
+                  </div>
+                  <div>
+                    <a className="change-btn">팔로우</a>
                   </div>
                 </div>
 
@@ -454,7 +370,7 @@ class Main extends Component {
                   <div>
                     <a className="change-btn">팔로우</a>
                   </div>
-                </div>
+                </div> */}
               </div>
               <FootList />
               {/* <div className="aside-buttom">

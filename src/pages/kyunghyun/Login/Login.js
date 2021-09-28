@@ -1,55 +1,65 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/common.scss';
-import LoginForm from './LoginForm';
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      idValue: '',
-      pwValue: '',
-      isValid: false,
+      id: '',
+      pw: '',
+      valid: false,
     };
   }
 
-  handleIdInput = e => {
+  handleInput = e => {
+    const { value, name } = e.target;
     this.setState({
-      idValue: e.target.value,
+      [name]: value,
     });
-  };
-
-  handlePwInput = e => {
-    this.setState({
-      pwValue: e.target.value,
-    });
-  };
+  }; // id/pw 통합 input핸들러 : state객체 속성을 이용 []:value 방식으로 적용되는 input을 나눔
 
   checkValid = e => {
-    const { idValue, pwValue } = this.state;
-    const validId = idValue.includes('@');
-    const validPw = pwValue.length >= 6;
+    const { id, pw } = this.state;
+    const validId = id.includes('@');
+    const validPw = pw.length >= 6;
     validId && validPw
-      ? this.setState({ isValid: true })
-      : this.setState({ isValid: false });
+      ? this.setState({ valid: true })
+      : this.setState({ valid: false });
   };
+  // id input의 @와 pw input이 길이가 6 이상의 문자열을 받는 유효성 확인
+  // valid가 true일 시 className이 변경되어 버튼 색 변경
 
   loginValidation = () => {
-    this.state.isValid
-      ? this.props.history.push('/Main-KyungHyun')
-      : (this.state.idValue = ''); // 여기서부턴 유효성 검사 추후 추가 예정
-    this.state.pwValue = '';
-    this.state.alert =
+    const { valid, pw, id, alert } = this.state;
+    const { history } = this.props;
+
+    valid ? history.push('/Main-KyungHyun') : (id = '');
+    pw = '';
+    alert =
       '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.';
   };
-  enterValidation = e => {
-    if (e.key === 'Enter' && this.state.isValid) {
-      this.props.history.push('/Main-KyungHyun');
+  //// loginValidation은 유효성 검사 함수 -> 추후 스케줄에 적용 예정
+
+  // enterValidation = e => {
+  //   const { history } = this.props;
+  //   if (e.key === 'Enter' && this.state.valid) {
+  //     history.push('/Main-KyungHyun');
+  //   }
+  // };
+
+  handleSubmit = e => {
+    const { history } = this.props;
+    const { valid } = this.state;
+    e.preventDefault();
+    if (valid) {
+      history.push('/Main-KyungHyun');
     }
   };
+  //submit이 일어날 시  history.push('/Main-KyungHyun'); 실행
 
   render() {
-    const { idValue, pwValue } = this.state;
+    const { id, pw, valid } = this.state;
     return (
       <div className="KyungHyunLogin">
         <header>
@@ -57,32 +67,36 @@ class Login extends React.Component {
             <b>instagram</b>
           </h1>
           <div className="main-function">
-            <form className="login-form" method="POST">
+            <form
+              className="login-form"
+              method="POST"
+              onSubmit={this.handleSubmit}
+            >
               <input
                 className="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 type="text"
-                onChange={this.handleIdInput}
+                onChange={this.handleInput}
                 onKeyUp={this.checkValid}
-                onKeyDown={this.enterValidation}
-                value={idValue}
-                name="idValue"
+                // onKeyDown={this.enterValidation}
+                value={id}
+                name="id"
               />
 
               <input
                 className="pw"
                 placeholder="비밀번호"
                 type="password"
-                onChange={this.handlePwInput}
+                onChange={this.handleInput}
                 onKeyUp={this.checkValid}
-                onKeyDown={this.enterValidation}
-                value={pwValue}
-                name="pwValue"
+                // onKeyDown={this.enterValidation}
+                value={pw}
+                name="pw"
               />
               <button
-                className={this.state.isValid ? 'valid' : 'login'}
-                type="button"
-                onClick={this.loginValidation}
+                className={valid ? 'valid' : 'login'}
+                type="submit"
+                // onClick={this.loginValidation}
               >
                 <div>로그인</div>
               </button>

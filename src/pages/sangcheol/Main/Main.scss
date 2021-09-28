@@ -6,31 +6,29 @@
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 100px;
-  }
-
-  .nav-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-  }
-
-  .logo-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    :first-child {
-      margin-right: 10px;
+    .nav-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 80px;
     }
-  }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  #logo-text {
-    padding-left: 20px;
-    font-size: 20px;
-    font-family: 'Lobster', cursive;
-    font-weight: bold;
-    border-left: 1px solid black;
+      :first-child {
+        margin-right: 10px;
+      }
+    }
+
+    #logo-text {
+      padding-left: 20px;
+      font-size: 20px;
+      font-family: 'Lobster', cursive;
+      font-weight: bold;
+      border-left: 1px solid black;
+    }
   }
 
   .textbox {
@@ -39,7 +37,6 @@
     height: 30px;
 
     .fa-search {
-      /* onclick 구현 예정 */
       color: rgba(0, 0, 0, 0.3);
       position: absolute;
       top: 10px;
@@ -68,28 +65,9 @@
     }
   }
 
-  //common
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
   a {
     all: unset;
     color: black;
-  }
-
-  // body {
-  //   padding-bottom: 100px;
-  // }
-
-  input {
-    outline: none;
-  }
-
-  li {
-    list-style: none;
   }
 
   .fab {

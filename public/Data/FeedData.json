@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "userId": "xangcheol",
+    "userLocation": "Byron Bay",
+    "userImage": "images/sangcheol/피드용사진.jpeg",
+    "userLikedImage": "images/sangcheol/프사용.JPG",
+    "userLikedAccount": "xangcheol",
+    "howManyLiked": 25,
+    "feedText": "민지님 짱짱",
+    "content": {
+      "id": 1,
+      "userId": "Minji",
+      "content": "i'm best teacher"
+    }
+  }
+]

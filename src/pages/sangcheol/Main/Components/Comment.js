@@ -1,6 +1,14 @@
 import React from 'react';
 
 class Comment extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      commentBox: [],
+    };
+  }
+
   render() {
     const { handleInput, handleSubmit, inputKeyword } = this.props;
 

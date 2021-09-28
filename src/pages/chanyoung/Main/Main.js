@@ -1,16 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCamera,
-  faSearch,
-  faEllipsisH,
-  faHeart,
-  faComment,
-  faUpload,
-  faBookmark,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Main.scss';
-import Comment from './components/feeds/Comment';
+import Feed from './components/feeds/Feed';
 
 class Main extends React.Component {
   render() {
@@ -56,45 +48,7 @@ class Main extends React.Component {
           </ul>
         </header>
         <main>
-          <section className="feeds">
-            <div className="feeds-header">
-              <div className="feeds-header__user">
-                <img
-                  className="user-img"
-                  src="/images/chanyoung/duna2.jpg"
-                  alt=""
-                />
-                <span className="username">DUNA</span>
-              </div>
-              <FontAwesomeIcon className="i" icon={faEllipsisH} />
-            </div>
-            <img
-              className="feeds-img"
-              src="/images/chanyoung/duna1.jpg"
-              alt=""
-            />
-            <div className="feeds-main">
-              <div className="feeds-main__icons">
-                <div className="feeds-main__icons--left">
-                  <FontAwesomeIcon className="i" icon={faHeart} />
-                  <FontAwesomeIcon className="i" icon={faComment} />
-                  <FontAwesomeIcon className="i" icon={faUpload} />
-                </div>
-                <FontAwesomeIcon className="i" icon={faBookmark} />
-              </div>
-              <div className="feeds-main__like">
-                <img
-                  className="user-img"
-                  src="/images/chanyoung/cat1.jpg"
-                  alt=""
-                />
-                <span className="username">aineworld</span>님 외{' '}
-                <span className="feeds-main__like__count">10</span>명이
-                좋아합니다
-              </div>
-              <Comment />
-            </div>
-          </section>
+          <Feed />
           <section className="side">
             <div className="side-header">
               <img

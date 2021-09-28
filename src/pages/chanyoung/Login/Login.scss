@@ -1,6 +1,6 @@
 @import '../../../styles/common';
 
-.ChanYoungLogin {
+.chanyoungLogin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
     font-size: 70px;
   }
 
-  .main-wrapper {
+  .mainWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,27 +52,30 @@
       outline: none;
     }
   }
-  .login__id {
+
+  .id {
     margin-bottom: 10px;
   }
 
-  .login__password {
+  .pw {
     margin-bottom: 25px;
   }
 
-  .login__button {
+  .button {
     border: none;
     background-color: blue;
     color: white;
     font-size: 25px;
   }
-  .login__button--disabled {
+
+  .buttonDisabled {
     border: none;
     background-color: #c4e1fb;
     color: white;
     font-size: 25px;
   }
-  .find-password {
+
+  .findPassword {
     text-align: center;
     color: #376088;
     font-size: 20px;

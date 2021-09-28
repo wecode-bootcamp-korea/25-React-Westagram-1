@@ -6,40 +6,59 @@ class Comment extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentsInfo: [
-        { key: 1, name: 'Dochi', comment: '너무 귀엽다~😄' },
-        { key: 2, name: 'Puuuooo', comment: '역시 말티즈야' },
-      ],
+      commentsInfo: {
+        list: [],
+        nextKey: null,
+      },
     };
   }
 
+  componentDidMount() {
+    this.initComment();
+  }
+
+  initComment = () => {
+    fetch('http://localhost:3000/chanyoung/data/commentData.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState(() => ({
+          commentsInfo: {
+            list: data,
+            nextKey: data.length + 1,
+          },
+        }));
+      });
+  };
+
   addCommnet = e => {
     e.preventDefault();
-    const { commentsInfo } = this.state;
-    const key =
-      commentsInfo.length === 0
-        ? 1
-        : commentsInfo[commentsInfo.length - 1].key + 1;
-
-    this.setState(
-      (this.state.commentsInfo = [
-        ...commentsInfo,
-        {
-          key: key,
-          name: '정찬영',
-          comment: e.target[0].value,
+    const { nextKey } = this.state.commentsInfo;
+    const newComment = {
+      key: nextKey,
+      name: '정찬영',
+      comment: e.target[0].value,
+    };
+    // console.log(e.target[0].value);
+    this.setState(({ commentsInfo: { list } }) => {
+      //console.log(e.target[0].value); 질문 할 거! form으로 할 때 input value 가져오기
+      return {
+        commentsInfo: {
+          list: [...list, newComment],
+          nextKey: nextKey + 1,
         },
-      ])
-    );
+      };
+    });
+
     e.target[0].value = '';
   };
 
   deleteComment = key => {
-    this.setState(
-      (this.state.commentsInfo = this.state.commentsInfo.filter(
-        e => key !== e.key
-      ))
-    );
+    this.setState(({ commentsInfo: { list, nextKey } }) => ({
+      commentsInfo: {
+        list: list.filter(e => key !== e.key),
+        nextKey: nextKey,
+      },
+    }));
   };
 
   render() {

@@ -11,12 +11,12 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="ChanYoungLogin">
-        <div className="main-wrapper">
+      <div className="chanyoungLogin">
+        <div className="mainWrapper">
           <header>westagram</header>
           <main>
             <LoginForm goToMain={this.goToMain} />
-            <section className="find-password">비밀번호를 잊으셨나요?</section>
+            <section className="findPassword">비밀번호를 잊으셨나요?</section>
           </main>
         </div>
       </div>

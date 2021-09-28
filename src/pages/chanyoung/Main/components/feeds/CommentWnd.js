@@ -6,7 +6,7 @@ class CommentWnd extends React.Component {
   showComment = () => {
     const { commentsInfo, deleteComment } = this.props;
 
-    return commentsInfo.map(e => (
+    return commentsInfo.list.map(e => (
       <li className="feeds-main__comments__content" key={e.key}>
         <div className="comment-wrapper">
           <span className="username">{e.name} </span>

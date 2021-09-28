@@ -10,7 +10,7 @@ class Pw extends React.Component {
   render() {
     return (
       <input
-        className="login__password"
+        className="pw"
         type="password"
         placeholder="비밀번호"
         onChange={this.checkVaild}

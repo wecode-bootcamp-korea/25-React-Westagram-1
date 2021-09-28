@@ -1,0 +1,29 @@
+[
+  {
+    "key": 1,
+    "userName": "DUNA",
+    "userImg": "/images/chanyoung/duna2.jpg",
+    "feedImg": "/images/chanyoung/duna1.jpg",
+    "likeUserImg": "/images/chanyoung/cat1.jpg",
+    "likeUserName": "aineworld",
+    "likeUserCount": 10
+  },
+  {
+    "key": 2,
+    "userName": "DUNA",
+    "userImg": "/images/chanyoung/duna2.jpg",
+    "feedImg": "/images/chanyoung/duna1.jpg",
+    "likeUserImg": "/images/chanyoung/cat1.jpg",
+    "likeUserName": "helloworld",
+    "likeUserCount": 30
+  },
+  {
+    "key": 3,
+    "userName": "DUNA",
+    "userImg": "/images/chanyoung/duna2.jpg",
+    "feedImg": "/images/chanyoung/duna1.jpg",
+    "likeUserImg": "/images/chanyoung/cat1.jpg",
+    "likeUserName": "goodbyeworld",
+    "likeUserCount": 40
+  }
+]

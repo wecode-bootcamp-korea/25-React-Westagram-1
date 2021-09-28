@@ -3,7 +3,7 @@ import React from 'react';
 class Button extends React.Component {
   changeClassName = () => {
     const { isBtn } = this.props;
-    return isBtn ? 'login__button' : 'login__button--disabled';
+    return isBtn ? 'button' : 'buttonDisabled';
   };
   render() {
     return (

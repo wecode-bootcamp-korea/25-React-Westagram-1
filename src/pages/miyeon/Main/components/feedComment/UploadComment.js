@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-export default class UploadComment extends Component {
+class UploadComment extends Component {
   constructor() {
     super();
     this.state = {
@@ -48,3 +48,5 @@ export default class UploadComment extends Component {
     );
   }
 }
+
+export default UploadComment;

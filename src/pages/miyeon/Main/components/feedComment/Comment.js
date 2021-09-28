@@ -1,24 +1,25 @@
 import { Component } from 'react';
 import UploadComment from './UploadComment';
 
-export default class Comment extends Component {
+class Comment extends Component {
   constructor() {
     super();
     this.state = {
       inputVal: '',
-      commentList: [
-        {
-          id: 1,
-          name: 'rrpec9',
-          content: '아기맹수 버찌녀석',
-        },
-        {
-          id: 2,
-          name: 'v_ddabong_v',
-          content: '집사가 기다린다 버찌야',
-        },
-      ],
+      commentList: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/miyeon/data/mainFeed.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          commentList: data,
+        })
+      );
   }
 
   handleInput = e => {
@@ -91,3 +92,5 @@ export default class Comment extends Component {
     );
   }
 }
+
+export default Comment;

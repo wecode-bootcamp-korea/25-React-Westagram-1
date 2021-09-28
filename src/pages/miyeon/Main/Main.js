@@ -1,34 +1,28 @@
 import { Component } from 'react';
-import Comment from './components/feedComment/Comment';
 import CenterBar from './components/topUserSearch/CenterBar';
+import MainFeed from './components/mainFeed/MainFeed';
 import './Main.scss';
 
-export default class Main extends Component {
+class Main extends Component {
   constructor() {
     super();
     this.state = {
-      heartBtn: false,
       profileLayer: false,
-      likeNumber: 2,
+      feedInfo: [],
     };
   }
 
-  heartBtnActive = () => {
-    this.setState({
-      heartBtn: !this.state.heartBtn,
-    });
-  }; // 좋아요 기능 - 하트 클릭시 진한 컬러 하트로 변경
-
-  likeNumberPlus = () => {
-    const { heartBtn } = this.state;
-    heartBtn === true
-      ? this.setState({
-          likeNumber: this.state.likeNumber - 1,
+  componentDidMount() {
+    fetch('http://localhost:3000/miyeon/data/mainFeed.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          feedInfo: data,
         })
-      : this.setState({
-          likeNumber: this.state.likeNumber + 1,
-        });
-  }; // 좋아요 기능 - 하트 클릭시 좋아요 수 변경
+      );
+  }
 
   clickProfile = () => {
     this.setState({
@@ -49,9 +43,9 @@ export default class Main extends Component {
                   alt="catFoot1"
                 />
               </span>
-              <a href="/Main-MiYeon" className="catstaText">
+              <span href="/Main-MiYeon" className="catstaText">
                 <h1 className="catstaLogo2">catstagram</h1>
-              </a>
+              </span>
             </div>
             <CenterBar />
             <div className="rightBar">
@@ -98,66 +92,11 @@ export default class Main extends Component {
         </header>
 
         <section className="mainSection">
-          <article className="wrapper">
-            <div className="feedHeader">
-              <div className="headerLeft">
-                <img
-                  className="catProfilePhoto2"
-                  src="./images/miyeon/buzzi.jpg"
-                  alt="my cutie cat"
-                />
-                <div className="myName">buzzi_nyang</div>
-              </div>
-              <div className="headerRight">
-                <img src="./images/miyeon/more.png" alt="more" />
-              </div>
-            </div>
-            <div className="feedImage">
-              <img className="myCat" src="./images/miyeon/cat.jpg" alt="cat1" />
-            </div>
-            <div className="imageBottom">
-              <div className="bottomLeft">
-                <span className="heartBar" onClick={this.heartBtnActive}>
-                  <img
-                    src={
-                      this.state.heartBtn
-                        ? './images/miyeon/heart2.png'
-                        : './images/miyeon/heart.png'
-                    }
-                    alt="heart2"
-                    onClick={this.likeNumberPlus}
-                  />
-                </span>
-                <img src="./images/miyeon/comment.png" alt="comment" />
-                <img src="./images/miyeon/upload.png" alt="upload" />
-              </div>
-              <div className="bottomRight">
-                <img
-                  className="save"
-                  src="./images/miyeon/save.png"
-                  alt="content save"
-                />
-              </div>
-            </div>
-            <div className="whosLike">
-              <div className="likePhoto">
-                <img
-                  className="catProfilePhoto4"
-                  src="./images/miyeon/buzzi.jpg"
-                  alt="cat2"
-                />
-              </div>
-              <div className="likeWho">
-                <b>buzzi_nyang</b>님 <b>외 {this.state.likeNumber}명이</b>
-                좋아합니다.
-              </div>
-            </div>
-            <div className="feedContent">
-              <b>buzzi_nyang</b>&nbsp; 박버찌 기다려.. 집사가 곧 냥줍 하러
-              간다..
-            </div>
-            <Comment />
-          </article>
+          <div>
+            {this.state.feedInfo.map(user => {
+              return <MainFeed userData={user} />;
+            })}
+          </div>
           <div className="mainRight">
             <div className="myProfile">
               <div>
@@ -178,9 +117,9 @@ export default class Main extends Component {
                 <div className="user1">
                   <img src="./images/miyeon/user1.jpg" alt="my friend's dog" />
                   <div className="userID">
-                    <a href="#" className="whatID">
+                    <span href="#" className="whatID">
                       <b>mydog_syuli</b>
-                    </a>
+                    </span>
                     <p className="beforeUpload">16분 전</p>
                   </div>
                 </div>
@@ -190,18 +129,18 @@ export default class Main extends Component {
                     alt="corona 2nd complete"
                   />
                   <div className="userID">
-                    <a href="#" className="whatID">
+                    <span href="#" className="whatID">
                       <b>v_ddabong_v</b>
-                    </a>
+                    </span>
                     <p className="beforeUpload">1시간 전</p>
                   </div>
                 </div>
                 <div className="user3">
                   <img src="./images/miyeon/user3.jpg" alt="3d cat car" />
                   <div className="userID">
-                    <a href="#" className="whatID">
+                    <span href="#" className="whatID">
                       <b>iwascar</b>
-                    </a>
+                    </span>
                     <p className="beforeUpload">20시간 전</p>
                   </div>
                 </div>
@@ -216,27 +155,27 @@ export default class Main extends Component {
                 <div className="user1">
                   <img src="./images/miyeon/cat1.jpg" alt="blue cat" />
                   <div className="userID">
-                    <a href="#" className="whatID">
+                    <span href="#" className="whatID">
                       <b>bluecat</b>
-                    </a>
+                    </span>
                     <p className="beforeUpload">16분 전</p>
                   </div>
                 </div>
                 <div className="user2">
                   <img src="./images/miyeon/user4.jpg" alt="3d cat" />
                   <div className="userID">
-                    <a href="#" className="whatID">
+                    <span href="#" className="whatID">
                       <b>cat_choding</b>
-                    </a>
+                    </span>
                     <p className="beforeUpload">1시간 전</p>
                   </div>
                 </div>
                 <div className="user3">
                   <img src="./images/miyeon/cat3.jpg" alt="white cat" />
                   <div className="userID">
-                    <a href="#" className="whatID">
+                    <span className="whatID">
                       <b>nyangX2_punch</b>
-                    </a>
+                    </span>
                     <p className="beforeUpload">20시간 전</p>
                   </div>
                 </div>
@@ -255,3 +194,5 @@ export default class Main extends Component {
     );
   }
 }
+
+export default Main;

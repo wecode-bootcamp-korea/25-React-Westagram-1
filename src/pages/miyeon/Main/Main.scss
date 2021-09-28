@@ -208,7 +208,7 @@ body {
           justify-content: space-between;
           align-items: center;
           position: absolute;
-          width: 600px;
+          width: 100%;
           height: 60px;
           padding: 20px;
 
@@ -419,13 +419,12 @@ body {
             }
           }
         }
-      }
-
-      .fooTer {
-        width: 100%;
-        color: #dbdbdb;
-        border-radius: 3px;
-        font-weight: bold;
+        .fooTer {
+          width: 100%;
+          color: #dbdbdb;
+          border-radius: 3px;
+          font-weight: bold;
+        }
       }
     }
 

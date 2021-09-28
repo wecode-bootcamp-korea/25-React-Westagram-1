@@ -7,39 +7,20 @@ class CenterBar extends Component {
     this.state = {
       searchLayer: false,
       searchKeyword: '',
-      users: [
-        {
-          no: 1,
-          id: 'mydog_syuli',
-          profileImg: './images/miyeon/user1.jpg',
-          description: '작고 소중한 강아지 셜리',
-        },
-        {
-          no: 2,
-          id: 'v_ddabong_v',
-          profileImg: './images/miyeon/user2.jpg',
-          description: '백신 2차 접종 완료! 쌍따봉 v^^v',
-        },
-        {
-          no: 3,
-          id: 'iwascar',
-          profileImg: './images/miyeon/user3.jpg',
-          description: '나는 고양이 차였다',
-        },
-        {
-          no: 4,
-          id: 'nyangX2_punch',
-          profileImg: './images/miyeon/cat3.jpg',
-          description: '큐티깜찍 하얀 고앵이',
-        },
-        {
-          no: 5,
-          id: 'bluecat',
-          profileImg: './images/miyeon/cat1.jpg',
-          description: '하늘을 날고 싶은 냥냥이',
-        },
-      ],
+      users: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/miyeon/data/userListData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          users: data,
+        })
+      );
   }
 
   topInputLayer = e => {

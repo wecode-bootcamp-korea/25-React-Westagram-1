@@ -5,6 +5,7 @@ class Button extends React.Component {
     const { isBtn } = this.props;
     return isBtn ? 'button' : 'buttonDisabled';
   };
+
   render() {
     return (
       <button className={this.changeClassName()} type="submit">

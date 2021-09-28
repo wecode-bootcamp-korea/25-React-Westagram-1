@@ -1,7 +1,7 @@
 import React from 'react';
-import './Login.scss';
 import { withRouter } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
+import './Login.scss';
 
 class Login extends React.Component {
   goToMain = (isBtn, e) => {

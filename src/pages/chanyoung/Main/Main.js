@@ -1,22 +1,22 @@
 import React from 'react';
+import Feed from './components/feeds/Feed';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Main.scss';
-import Feed from './components/feeds/Feed';
 
 class Main extends React.Component {
   render() {
     return (
-      <div className="ChanYoungMain">
+      <div className="chanyoungMain">
         <header>
-          <ul className="header__ul">
-            <li className="header__title">
-              <FontAwesomeIcon className="i" icon={faCamera} /> | Westagram
+          <ul className="ul">
+            <li className="title">
+              <FontAwesomeIcon icon={faCamera} /> | Westagram
             </li>
-            <li className="header__search">
-              <FontAwesomeIcon className="i" icon={faSearch} />
+            <li className="search">
+              <FontAwesomeIcon icon={faSearch} />
               <input type="text" placeholder="검색" />
-              <div className="header__search__user-container"></div>
+              <div className="userContainer"></div>
             </li>
             <nav>
               <ul className="menu">
@@ -52,7 +52,7 @@ class Main extends React.Component {
           <section className="side">
             <div className="side-header">
               <img
-                className="user-img"
+                className="userImg"
                 src="/images/chanyoung/cat2.jpg"
                 alt=""
               />
@@ -68,7 +68,7 @@ class Main extends React.Component {
               </div>
               <div className="side-stories-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/cat3.jpg"
                   alt=""
                 />
@@ -79,7 +79,7 @@ class Main extends React.Component {
               </div>
               <div className="side-stories-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/cat1.jpg"
                   alt=""
                 />
@@ -90,7 +90,7 @@ class Main extends React.Component {
               </div>
               <div className="side-stories-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/dog1.jpg"
                   alt=""
                 />
@@ -101,7 +101,7 @@ class Main extends React.Component {
               </div>
               <div className="side-stories-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/dog2.jpg"
                   alt=""
                 />
@@ -118,7 +118,7 @@ class Main extends React.Component {
               </div>
               <div className="side-recommends-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/cat3.jpg"
                   alt=""
                 />
@@ -129,7 +129,7 @@ class Main extends React.Component {
               </div>
               <div className="side-recommends-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/cat1.jpg"
                   alt=""
                 />
@@ -140,7 +140,7 @@ class Main extends React.Component {
               </div>
               <div className="side-recommends-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/dog1.jpg"
                   alt=""
                 />
@@ -151,7 +151,7 @@ class Main extends React.Component {
               </div>
               <div className="side-recommends-user">
                 <img
-                  className="user-img"
+                  className="userImg"
                   src="/images/chanyoung/dog2.jpg"
                   alt=""
                 />

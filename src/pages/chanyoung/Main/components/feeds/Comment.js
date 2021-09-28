@@ -38,9 +38,8 @@ class Comment extends React.Component {
       name: '정찬영',
       comment: e.target[0].value,
     };
-    // console.log(e.target[0].value);
+
     this.setState(({ commentsInfo: { list } }) => {
-      //console.log(e.target[0].value); 질문 할 거! form으로 할 때 input value 가져오기
       return {
         commentsInfo: {
           list: [...list, newComment],
@@ -48,7 +47,6 @@ class Comment extends React.Component {
         },
       };
     });
-
     e.target[0].value = '';
   };
 

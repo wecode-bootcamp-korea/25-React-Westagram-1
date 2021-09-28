@@ -9,7 +9,7 @@ class CommentForm extends Component {
     this.setState({
       comment: e.target.value,
     });
-  };
+  }; // input값이 변화할때마다 변화한 값을 comment에 넣고, setState로 comment의 state를 변환시킴
 
   handleSubmit = e => {
     e.preventDefault();
@@ -17,9 +17,7 @@ class CommentForm extends Component {
     this.setState({
       comment: '',
     });
-  };
-
-  handleEnter = e => {};
+  }; // input값을 submit하는 함수 : onCreate(handleCreate) 함수를 props로 받아 this.state=(comment)에 있는 데이터를 onCreate(handleCreate)의 파라미터로 보내 새로운 information 배열을 생성하고, setState를 사용하여 comment의 state를 ''로 바꿈
 
   render() {
     const { comment } = this.state;

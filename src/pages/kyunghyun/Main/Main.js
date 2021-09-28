@@ -2,21 +2,23 @@ import React, { Component } from 'react';
 import './Main.scss';
 import CommentForm from './comment/CommentForm';
 import CommentList from './comment/CommentList';
+import FootList from './foot/FootList';
 // import "../../style/common.scss";
 class Main extends Component {
-  id = 2;
+  id = 3;
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          information: res.CL,
+        });
+      });
+  } // json파일 패치하기
 
   state = {
-    information: [
-      {
-        id: 0,
-        comment: 'Beautiful weather',
-      },
-      {
-        id: 1,
-        comment: 'What a nice pic!! Who took the picture???',
-      },
-    ],
+    information: [], // 댓글 데이터가 들어갈 배열
   };
 
   handleCreate = data => {
@@ -25,10 +27,10 @@ class Main extends Component {
       information: information.concat(
         Object.assign({}, data, {
           id: this.id++,
-        })
+        }) // 비어있는 객체{}에 data를 집어넣고,   id: this.id++,도 집어넣기 or ...data, id:  this.id++; 해도 됨 = 불변성 유지
       ),
     });
-  };
+  }; // 댓글 데이터 생성하는 함수 : data (CommentForm의 state.comment) 를 파라미터로 받아 concat/Object.assign으로 생성한 새로운 information배열을 가지고, setState로 State변경
 
   handleRemove = id => {
     const { information } = this.state;
@@ -53,7 +55,7 @@ class Main extends Component {
         return info;
       }),
     });
-  };
+  }; // 배열 수정하는 함수 : id 와 data(를 파라미터로 받아 id가 매치되는 배열의 data를 map함수를 사용해 새로운 data로 변환시킴
 
   render() {
     return (
@@ -454,7 +456,8 @@ class Main extends Component {
                   </div>
                 </div>
               </div>
-              <div className="aside-buttom">
+              <FootList />
+              {/* <div className="aside-buttom">
                 <ul className="aside-buttom-ul">
                   <li>
                     {' '}
@@ -560,7 +563,7 @@ class Main extends Component {
                 <span className="aside-buttom-text">
                   © 2021 Instagram from Facebook
                 </span>
-              </div>
+              </div> */}
             </aside>
           </section>
         </main>

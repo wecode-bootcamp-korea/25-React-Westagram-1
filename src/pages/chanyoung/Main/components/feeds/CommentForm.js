@@ -3,17 +3,9 @@ import React from 'react';
 class CommentForm extends React.Component {
   render() {
     return (
-      <form
-        className="feeds-form"
-        value=""
-        onSubmit={e => this.props.addCommnet(e)}
-      >
-        <input
-          className="feeds-form__input"
-          type="text"
-          placeholder="댓글 달기..."
-        />
-        <input className="feeds-form__submit" type="submit" />
+      <form className="form" onSubmit={e => this.props.addCommnet(e)}>
+        <input className="input" placeholder="댓글 달기..." />
+        <input className="submit" type="submit" />
       </form>
     );
   }

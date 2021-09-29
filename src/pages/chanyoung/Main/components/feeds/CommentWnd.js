@@ -7,8 +7,8 @@ class CommentWnd extends React.Component {
     const { commentsInfo, deleteComment } = this.props;
 
     return commentsInfo.list.map(e => (
-      <li className="feeds-main__comments__content" key={e.key}>
-        <div className="comment-wrapper">
+      <li className="content" key={e.key}>
+        <div>
           <span className="username">{e.name} </span>
           {e.comment}
         </div>

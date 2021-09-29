@@ -61,12 +61,12 @@ class Comment extends React.Component {
 
   render() {
     return (
-      <div className="feeds-main__comments">
+      <div className="comments">
         <CommentWnd
           commentsInfo={this.state.commentsInfo}
           deleteComment={this.deleteComment}
         />
-        <div className="feeds-main__comment-time">42분전</div>
+        <div className="time">42분전</div>
         <CommentForm addCommnet={this.addCommnet} />
       </div>
     );

@@ -32,12 +32,12 @@ class Main extends React.Component {
                     alt="heart"
                   />
                 </li>
-                <li className="menu-profile">
+                <li className="profile">
                   <img
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
                     alt="mypage"
                   />
-                  <div className="menu-profile-box">
+                  <div className="profileBox">
                     <span>Profile</span>
                     <span>Edit</span>
                     <span>Setting</span>
@@ -50,114 +50,114 @@ class Main extends React.Component {
         <main>
           <Feed />
           <section className="side">
-            <div className="side-header">
+            <div className="header">
               <img
                 className="userImg"
                 src="/images/chanyoung/cat2.jpg"
-                alt=""
+                alt="cat2"
               />
-              <div className="side-header__title">
+              <div className="headerTitle">
                 <span className="username">wecode_bootcamp</span>
-                <span className="side-header__title--sub">WeCode | 위코드</span>
+                <span className="headerTitle--sub">WeCode | 위코드</span>
               </div>
             </div>
-            <div className="side-stories">
-              <div className="side-stories-header">
-                <span className="side-stories-header--title">스토리</span>
-                <span className="side-stories-header--all">모두 보기</span>
+            <div className="stories">
+              <div className="storiesHeader">
+                <span className="storiesHeaderTitle">스토리</span>
+                <span className="storiesHeaderAll">모두 보기</span>
               </div>
-              <div className="side-stories-user">
+              <div className="storiesUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/cat3.jpg"
-                  alt=""
+                  alt="cat3"
                 />
-                <div className="side-stories-user__text">
+                <div className="storiesUserText">
                   <span className="username">_yum_s</span>
-                  <span className="side-stories-user__time">16분 전</span>
+                  <span className="storiesUserTime">16분 전</span>
                 </div>
               </div>
-              <div className="side-stories-user">
+              <div className="storiesUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/cat1.jpg"
-                  alt=""
+                  alt="cat1"
                 />
-                <div className="side-stories-user__text">
+                <div className="storiesUserText">
                   <span className="username">drink_eat_drink</span>
-                  <span className="side-stories-user__time">3시간 전</span>
+                  <span className="storiesUserTime">3시간 전</span>
                 </div>
               </div>
-              <div className="side-stories-user">
+              <div className="storiesUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/dog1.jpg"
-                  alt=""
+                  alt="dog1"
                 />
-                <div className="side-stories-user__text">
+                <div className="storiesUserText">
                   <span className="username">hyukyc</span>
-                  <span className="side-stories-user__time">20시간 전</span>
+                  <span className="storiesUserTime">20시간 전</span>
                 </div>
               </div>
-              <div className="side-stories-user">
+              <div className="storiesUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/dog2.jpg"
-                  alt=""
+                  alt="dog2"
                 />
-                <div className="side-stories-user__text">
+                <div className="storiesUserText">
                   <span className="username">_yum_s</span>
-                  <span className="side-stories-user__time">16분 전</span>
+                  <span className="storiesUserTime">16분 전</span>
                 </div>
               </div>
             </div>
-            <div className="side-recommends">
-              <div className="side-recommends-header">
-                <span className="side-recommends-header--title">스토리</span>
-                <span className="side-recommends-header--all">모두 보기</span>
+            <div className="recommends">
+              <div className="recommendsHeader">
+                <span className="recommendsHeaderTitle">스토리</span>
+                <span className="recommendsHeaderAll">모두 보기</span>
               </div>
-              <div className="side-recommends-user">
+              <div className="recommendsUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/cat3.jpg"
-                  alt=""
+                  alt="cat3"
                 />
-                <div className="side-recommends-user__text">
+                <div className="recommendsUserText">
                   <span className="username">_yum_s</span>
-                  <span className="side-recommends-user__time">16분 전</span>
+                  <span className="recommendsUserTime">16분 전</span>
                 </div>
               </div>
-              <div className="side-recommends-user">
+              <div className="recommendsUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/cat1.jpg"
-                  alt=""
+                  alt="cat1"
                 />
-                <div className="side-recommends-user__text">
+                <div className="recommendsUserText">
                   <span className="username">drink_eat_drink</span>
-                  <span className="side-recommends-user__time">3시간 전</span>
+                  <span className="recommendsUserTime">3시간 전</span>
                 </div>
               </div>
-              <div className="side-recommends-user">
+              <div className="recommendsUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/dog1.jpg"
-                  alt=""
+                  alt="dog1"
                 />
-                <div className="side-recommends-user__text">
+                <div className="recommendsUserText">
                   <span className="username">hyukyc</span>
-                  <span className="side-recommends-user__time">20시간 전</span>
+                  <span className="recommendsUserTime">20시간 전</span>
                 </div>
               </div>
-              <div className="side-recommends-user">
+              <div className="recommendsUser">
                 <img
                   className="userImg"
                   src="/images/chanyoung/dog2.jpg"
-                  alt=""
+                  alt="dog2"
                 />
-                <div className="side-recommends-user__text">
+                <div className="recommendsUserText">
                   <span className="username">_yum_s</span>
-                  <span className="side-recommends-user__time">16분 전</span>
+                  <span className="recommendsUserTime">16분 전</span>
                 </div>
               </div>
             </div>

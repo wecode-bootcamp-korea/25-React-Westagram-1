@@ -33,27 +33,27 @@ class Feed extends React.Component {
     // div로 감싸는게 맞는지..
     return this.state.feedsInfo.map(e => (
       <div key={e.key}>
-        <div className="feeds-header">
-          <div className="feeds-header__user">
-            <img className="user-img" src={e.userImg} alt="" />
-            <span className="username">{e.userName}</span>
+        <div className="header">
+          <div className="user">
+            <img className="img" src={e.userImg} alt="FeedheaderUserImg" />
+            <span className="name">{e.userName}</span>
           </div>
           <FontAwesomeIcon className="i" icon={faEllipsisH} />
         </div>
-        <img className="feeds-img" src={e.feedImg} alt="" />
-        <div className="feeds-main">
-          <div className="feeds-main__icons">
-            <div className="feeds-main__icons--left">
+        <img className="bigImg" src={e.feedImg} alt="FeedImg" />
+        <div className="main">
+          <div className="icons">
+            <div className="left">
               <FontAwesomeIcon className="i" icon={faHeart} />
               <FontAwesomeIcon className="i" icon={faComment} />
               <FontAwesomeIcon className="i" icon={faUpload} />
             </div>
             <FontAwesomeIcon className="i" icon={faBookmark} />
           </div>
-          <div className="feeds-main__like">
-            <img className="user-img" src={e.likeUserImg} alt="" />
-            <span className="username">{e.likeUserName}</span>님 외{' '}
-            <span className="feeds-main__like__count">{e.likeUserCount}</span>
+          <div className="like">
+            <img className="userImg" src={e.likeUserImg} alt="likeImg" />
+            <span className="userName">{e.likeUserName}</span>님 외{' '}
+            <span className="count">{e.likeUserCount}</span>
             명이 좋아합니다
           </div>
           <Comment />

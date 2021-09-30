@@ -1,10 +1,10 @@
 import React from 'react';
 
 class Id extends React.Component {
-  checkVaild = e => {
-    e.target.value.includes('@')
-      ? this.props.changeIsVaild('id', true)
-      : this.props.changeIsVaild('id', false);
+  checkVaild = ({ target: { value } }) => {
+    value.includes('@')
+      ? this.props.changeIsVaild('id', value, true)
+      : this.props.changeIsVaild('id', value, false);
   };
 
   render() {

@@ -15,6 +15,10 @@ class Feed extends React.Component {
     this.state = { feedsInfo: [] };
   }
 
+  componentDidMount() {
+    this.initFeeds();
+  }
+
   initFeeds = () => {
     fetch('http://localhost:3000/chanyoung/data/feedData.json')
       .then(res => res.json())
@@ -25,12 +29,7 @@ class Feed extends React.Component {
       });
   };
 
-  componentDidMount() {
-    this.initFeeds();
-  }
-
-  showFeeds() {
-    // div로 감싸는게 맞는지..
+  drawFeeds() {
     return this.state.feedsInfo.map(e => (
       <div key={e.key}>
         <div className="header">
@@ -63,7 +62,7 @@ class Feed extends React.Component {
   }
 
   render() {
-    return <section className="feeds">{this.showFeeds()}</section>;
+    return <section className="feeds">{this.drawFeeds()}</section>;
   }
 }
 

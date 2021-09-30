@@ -1,10 +1,7 @@
 import React from 'react';
 
 class Button extends React.Component {
-  changeClassName = () => {
-    const { isBtn } = this.props;
-    return isBtn ? 'button' : 'buttonDisabled';
-  };
+  changeClassName = () => (this.props.isBtn ? 'button' : 'buttonDisabled');
 
   render() {
     return (

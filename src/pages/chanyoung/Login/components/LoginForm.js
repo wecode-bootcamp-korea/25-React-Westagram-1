@@ -8,18 +8,20 @@ class LoginForm extends React.Component {
     super();
     this.state = {
       id: {
-        input: '',
+        data: '',
         isVaild: false,
       },
       pw: {
-        input: '',
+        data: '',
         isVaild: false,
       },
     };
   }
 
-  changeIsVaild = (type, isVaild) =>
-    this.setState({ [type]: { isVaild: isVaild } });
+  changeIsVaild = (type, data, isVaild) =>
+    this.setState({
+      [type]: { data: data, isVaild: isVaild },
+    });
 
   render() {
     const { id, pw } = this.state;
@@ -29,7 +31,7 @@ class LoginForm extends React.Component {
       <form
         className="login"
         onSubmit={e => {
-          this.props.goToMain(isBtn, e);
+          this.props.goToMain(id.data, pw.data, isBtn, e);
         }}
       >
         <Id changeIsVaild={this.changeIsVaild} />

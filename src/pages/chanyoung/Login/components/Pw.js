@@ -1,10 +1,10 @@
 import React from 'react';
 
 class Pw extends React.Component {
-  checkVaild = e => {
-    e.target.value.length >= 5
-      ? this.props.changeIsVaild('pw', true)
-      : this.props.changeIsVaild('pw', false);
+  checkVaild = ({ target: { value } }) => {
+    value.length >= 5
+      ? this.props.changeIsVaild('pw', value, true)
+      : this.props.changeIsVaild('pw', value, false);
   };
 
   render() {

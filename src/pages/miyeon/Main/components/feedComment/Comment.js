@@ -7,17 +7,16 @@ class Comment extends Component {
     this.state = {
       inputVal: '',
       commentList: [],
+      fixCommentList: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/miyeon/data/mainFeed.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/miyeon/data/MainFeed.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
-          commentList: data,
+          fixcommentList: data.feedComment,
         })
       );
   }
@@ -43,38 +42,60 @@ class Comment extends Component {
       commentList: newArr,
       inputVal: '', // state 값만 빈값으로 되고, input창의 value 텍스트는 지워지지 않았음
     });
-    document.getElementsByClassName('comment')[0].value = '';
+    let length = document.getElementsByClassName('.wrapper').length;
+    e.target[length].value = '';
     // input창의 value 텍스트를 지움
+    // 메인 피드 개수를 계산함
   };
 
-  deleteComment = id => {
-    const deleteMyComment = this.state.commentList.filter(
+  uploadDeleteComment = id => {
+    const deleteMyComment1 = this.state.commentList.filter(
       comment => comment.id !== id
     );
-    console.log(deleteMyComment);
     this.setState({
-      commentList: deleteMyComment,
+      commentList: deleteMyComment1,
+    });
+  };
+
+  fixDeleteComment = id => {
+    const deleteMyComment2 = this.state.fixCommentList.filter(
+      comment => comment.id !== id
+    );
+    this.setState({
+      fixCommentList: deleteMyComment2,
     });
   };
 
   render() {
+    const { fixComment } = this.props;
     return (
       <>
         <ul className="commentList">
+          {fixComment.map(comm => {
+            return (
+              <UploadComment
+                comment={comm}
+                deleteComment={this.fixDeleteComment}
+                key={comm.id}
+              />
+            );
+          })}
+          {/* 피드마다 고정된 댓글 */}
           {this.state.commentList.map(comm => {
             return (
               <UploadComment
                 comment={comm}
-                deleteComment={this.deleteComment}
+                deleteComment={this.uploadDeleteComment}
+                key={comm.id}
               />
             );
           })}
+          {/* 업로드되는 댓글 */}
         </ul>
         <div className="time">50분 전</div>
         <form className="commentInput" onSubmit={this.addMyComment}>
           <input
             className="comment"
-            type="text"
             placeholder="댓글 달기..."
             onChange={this.handleInput}
           />

@@ -10,6 +10,7 @@
 
 body {
   background-color: #fafafa;
+  margin: 0;
 
   .mainMiyeon {
     background-color: #fafafa;
@@ -197,11 +198,15 @@ body {
         position: relative;
         width: 600px;
         max-width: 600px;
-        margin-top: 90px;
+        margin-top: 15px;
         margin-right: 20px;
         border: 1px solid #dbdbdb;
         border-radius: 3px;
         background-color: white;
+
+        &:nth-child(1) {
+          margin-top: 90px;
+        }
 
         .feedHeader {
           display: flex;
@@ -419,7 +424,7 @@ body {
             }
           }
         }
-        .fooTer {
+        fooTer {
           width: 100%;
           color: #dbdbdb;
           border-radius: 3px;
@@ -439,6 +444,10 @@ body {
 
       section {
         justify-content: center;
+
+        .wrapper {
+          margin-left: 20px;
+        }
       }
     }
   }

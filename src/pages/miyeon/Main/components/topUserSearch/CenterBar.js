@@ -24,7 +24,6 @@ class CenterBar extends Component {
   }
 
   topInputLayer = e => {
-    const { searchKeyword, searchLayer } = this.state;
     this.setState({
       searchKeyword: e.target.value,
       searchLayer: true,
@@ -36,7 +35,6 @@ class CenterBar extends Component {
       <div className="centerBar">
         <input
           className="searchBar"
-          type="text"
           placeholder="검색"
           onChange={this.topInputLayer}
           onFocus={e => {
@@ -60,7 +58,7 @@ class CenterBar extends Component {
                 }
               })
               .map(userArr => {
-                return <NavUserSearch usersInfo={userArr} />;
+                return <NavUserSearch usersInfo={userArr} key={userArr.no} />;
               })}
           </ul>
         </div>

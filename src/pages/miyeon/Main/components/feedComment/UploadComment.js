@@ -18,7 +18,7 @@ class UploadComment extends Component {
     const { comment, deleteComment } = this.props;
     return (
       <>
-        <li className="commentLi" key={comment.id}>
+        <li className="commentLi">
           <span>
             <b>{comment.name}</b>&nbsp;
             {comment.content}

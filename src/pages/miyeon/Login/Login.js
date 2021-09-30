@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -32,11 +32,29 @@ class Login extends React.Component {
   };
 
   goToMain = e => {
-    const { idVal, pwVal } = this.state;
-    idVal === 'buzzi_nyang@happy' && pwVal === '123456'
-      ? this.props.history.push('/Main-MiYeon')
-      : e.preventDefault();
-    alert('캣스타그램 계정 주인만 로그인할 수 있습니다');
+    e.preventDefault();
+    fetch('http://10.58.4.36:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idVal,
+        password: this.state.pwVal,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          this.props.history.push('/Main-MiYeon');
+        } else {
+          alert('계정 정보를 다시 확인하여 다시 로그인해 주세요.');
+        }
+      });
+    // 프론트와 백엔드 통신 이전 로그인 유효성 검사
+    // const { idVal, pwVal } = this.state;
+    // idVal === 'buzzi_nyang@happy' && pwVal === '123456'
+    //   ? this.props.history.push('/Main-MiYeon')
+    //   : e.preventDefault();
+    // alert('캣스타그램 계정 주인만 로그인할 수 있습니다');
   };
 
   render() {
@@ -71,9 +89,9 @@ class Login extends React.Component {
                 >
                   로그인
                 </button>
-                <a onClick={this.goToMain} className="pwForgot">
+                <Link onClick={this.goToMain} className="pwForgot">
                   비밀번호를 잊으셨나요?
-                </a>
+                </Link>
               </form>
             </div>
           </div>

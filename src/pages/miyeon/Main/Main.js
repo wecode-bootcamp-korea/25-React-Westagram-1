@@ -13,9 +13,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/miyeon/data/mainFeed.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/miyeon/data/mainFeed.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -27,7 +25,7 @@ class Main extends Component {
   clickProfile = () => {
     this.setState({
       profileLayer: !this.state.profileLayer,
-    }); // 내 프로필 클릭시 드롭 메뉴 on/off
+    });
   };
 
   render() {
@@ -94,7 +92,7 @@ class Main extends Component {
         <section className="mainSection">
           <div>
             {this.state.feedInfo.map(user => {
-              return <MainFeed userData={user} />;
+              return <MainFeed userData={user} key={user.no} />;
             })}
           </div>
           <div className="mainRight">
@@ -181,7 +179,7 @@ class Main extends Component {
                 </div>
               </div>
             </div>
-            <footer className="fooTer">
+            <footer>
               <p>
                 Instagram 정보 · 지원 · 홍보 센터 · API · 채용 정보 ·
                 개인정보처리방침 · 약관 · 디렉터리 · 프로필 · 해시태그 ·언어

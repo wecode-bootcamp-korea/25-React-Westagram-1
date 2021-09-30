@@ -6,26 +6,17 @@ class Mainfeed extends Component {
     super();
     this.state = {
       heartBtn: false,
-      likeNumber: 2,
     };
   }
 
   heartBtnActive = () => {
     this.setState({
       heartBtn: !this.state.heartBtn,
+      likeNumber: !this.state.heartBtn
+        ? this.state.likeNumber + 1
+        : this.state.likeNumber - 1,
     });
   }; // 좋아요 기능 - 하트 클릭시 진한 컬러 하트로 변경
-
-  likeNumberPlus = () => {
-    const { heartBtn, likeNumber } = this.state;
-    heartBtn === true
-      ? this.setState({
-          likeNumber: likeNumber - 1,
-        })
-      : this.setState({
-          likeNumber: likeNumber + 1,
-        });
-  }; // 좋아요 기능 - 하트 클릭시 좋아요 수 변경
 
   render() {
     const { userData } = this.props;
@@ -80,14 +71,14 @@ class Mainfeed extends Component {
             />
           </div>
           <div className="likeWho">
-            <b>{userData.userID}</b>님 <b>외 {this.state.likeNumber}명이</b>
+            <b>{userData.userID}</b>님 <b>외 {userData.likeNumber}명이</b>
             &nbsp; 좋아합니다.
           </div>
         </div>
         <div className="feedContent">
           <b>{userData.userID}</b>&nbsp; {userData.feedContent}
         </div>
-        <Comment />
+        <Comment fixComment={userData.feedComment} />
       </article>
     );
   }

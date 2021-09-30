@@ -16,7 +16,7 @@ class Mainfeed extends Component {
         ? this.state.likeNumber + 1
         : this.state.likeNumber - 1,
     });
-  }; // 좋아요 기능 - 하트 클릭시 진한 컬러 하트로 변경
+  };
 
   render() {
     const { userData } = this.props;
@@ -78,7 +78,10 @@ class Mainfeed extends Component {
         <div className="feedContent">
           <b>{userData.userID}</b>&nbsp; {userData.feedContent}
         </div>
-        <Comment fixComment={userData.feedComment} />
+        <Comment
+          uploadTime={userData.uploadTime}
+          fixComment={userData.feedComment}
+        />
       </article>
     );
   }

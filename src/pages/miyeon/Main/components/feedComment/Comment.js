@@ -67,7 +67,7 @@ class Comment extends Component {
   };
 
   render() {
-    const { fixComment } = this.props;
+    const { fixComment, uploadTime } = this.props;
     return (
       <>
         <ul className="commentList">
@@ -92,7 +92,7 @@ class Comment extends Component {
           })}
           {/* 업로드되는 댓글 */}
         </ul>
-        <div className="time">50분 전</div>
+        <div className="time">{uploadTime}분 전</div>
         <form className="commentInput" onSubmit={this.addMyComment}>
           <input
             className="comment"

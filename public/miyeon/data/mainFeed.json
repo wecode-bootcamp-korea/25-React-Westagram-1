@@ -6,6 +6,7 @@
     "feedImg": "./images/miyeon/userCat1.jpg",
     "feedContent": "저희 친구네 고양이 털쪘어요",
     "likeNumber": 6,
+    "uploadTime": 20,
     "feedComment": [
       {
         "id": 1,
@@ -31,6 +32,7 @@
     "feedImg": "./images/miyeon/cat.jpg",
     "feedContent": "박버찌 기다려.. 집사가 곧 냥줍 하러 간다..",
     "likeNumber": 3,
+    "uploadTime": 38,
     "feedComment": [
       {
         "id": 1,
@@ -51,6 +53,7 @@
     "feedImg": "./images/miyeon/userCat2.jpg",
     "feedContent": "나만 보면 드러눕는 길냥이.. 배 만져부러!!",
     "likeNumber": 11,
+    "uploadTime": 24,
     "feedComment": [
       {
         "id": 1,

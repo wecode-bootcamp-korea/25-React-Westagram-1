@@ -8,6 +8,7 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
+      alert: '',
       valid: false,
     };
   }
@@ -49,11 +50,37 @@ class Login extends React.Component {
   // };
 
   handleSubmit = e => {
+    // const { history } = this.props;
+    const { id, pw, alert, valid } = this.state;
     const { history } = this.props;
-    const { valid } = this.state;
-    e.preventDefault();
+    // e.preventDefault();
     if (valid) {
-      history.push('/Main-KyungHyun');
+      // 10.58.4.21:8000/users/signup
+      // http://10.58.5.12:8000/users/login
+      fetch('http://10.58.5.12:8000/users/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: this.state.id,
+          password: this.state.pw,
+          // name: 'dfsfdsdf',
+          // phone_number: '01041560647',
+          // information: 'EKFKEKEKEK',
+        }),
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.token) {
+            history.push('/Main-KyungHyun');
+            localStorage.setItem('kich-token', res.token);
+          } else {
+            this.setState({
+              id: '',
+              pw: '',
+              alert:
+                '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.',
+            });
+          }
+        });
     }
   };
   //submit이 일어날 시  history.push('/Main-KyungHyun'); 실행
@@ -67,11 +94,7 @@ class Login extends React.Component {
             <b>instagram</b>
           </h1>
           <div className="main-function">
-            <form
-              className="login-form"
-              method="POST"
-              onSubmit={this.handleSubmit}
-            >
+            <form className="login-form" onSubmit={this.handleSubmit}>
               <input
                 className="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -82,7 +105,6 @@ class Login extends React.Component {
                 value={id}
                 name="id"
               />
-
               <input
                 className="pw"
                 placeholder="비밀번호"
@@ -111,8 +133,8 @@ class Login extends React.Component {
                   <span className="fb-login-text">Facebook으로 로그인</span>
                 </a>
               </div>
+              s<p>{this.state.alert}</p>
             </form>
-            <p>{this.state.alert}</p>
             <a className="forgot-pw" href="https://bit.ly/3k5tzjV" tabIndex={0}>
               비밀번호를 잊으셨나요?
             </a>

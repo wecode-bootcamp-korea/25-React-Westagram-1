@@ -56,10 +56,11 @@ class FeedInfo extends Component {
     });
   }; // 배열 수정하는 함수 : id 와 data(를 파라미터로 받아 id가 매치되는 배열의 data를 map함수를 사용해 새로운 data로 변환시킴
   render() {
-    // const { id, mainImg, profileImg } = this.props.feed;
+    const { id, mainImg, profileImg } = this.props.feed;
+    const { information } = this.state;
     return (
       <>
-        <article>
+        <article key={id}>
           <header className="article-header">
             <div className="article-div">
               <div className="article-header-profile">
@@ -69,7 +70,7 @@ class FeedInfo extends Component {
                 >
                   <img
                     className="article-header-profile-img"
-                    src={this.props.feed.profileImg}
+                    src={profileImg}
                     alt=""
                   />
                 </a>
@@ -92,7 +93,7 @@ class FeedInfo extends Component {
             </div>
           </header>
           <div className="article-img">
-            <img className="article-img" src={this.props.feed.mainImg} />
+            <img className="article-img" src={mainImg} />
           </div>
           <div className="article-text">
             <section className="article-text-icon">
@@ -123,7 +124,7 @@ class FeedInfo extends Component {
             </div>
             <div className="article-text3">
               <CommentList
-                data={this.state.information}
+                data={information}
                 onRemove={this.handleRemove}
                 onUpdate={this.handleUpdate}
               />

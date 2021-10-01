@@ -42,9 +42,6 @@ class Comment extends Component {
       commentList: newArr,
       inputVal: '', // state 값만 빈값으로 되고, input창의 value 텍스트는 지워지지 않았음
     });
-    let length = document.getElementsByClassName('.wrapper').length;
-    e.target[length].value = '';
-    // 메인 피드 개수를 계산하여, input창의 value 텍스트를 지움
   };
 
   uploadDeleteComment = id => {
@@ -66,6 +63,7 @@ class Comment extends Component {
   };
 
   render() {
+    const { inputVal } = this.state;
     const { fixComment, uploadTime } = this.props;
     return (
       <>
@@ -96,6 +94,7 @@ class Comment extends Component {
           <input
             className="comment"
             placeholder="댓글 달기..."
+            value={inputVal}
             onChange={this.handleInput}
           />
           <button

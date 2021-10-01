@@ -1,7 +1,7 @@
 [
   {
-    "no": 1,
-    "userID": "iwascar",
+    "id": 1,
+    "user_id": "iwascar",
     "userProfileImg": "./images/miyeon/user3.jpg",
     "feedImg": "./images/miyeon/userCat1.jpg",
     "feedContent": "저희 친구네 고양이 털쪘어요",
@@ -26,8 +26,8 @@
     ]
   },
   {
-    "no": 2,
-    "userID": "buzzi_nyang",
+    "id": 2,
+    "user_id": "buzzi_nyang",
     "userProfileImg": "./images/miyeon/buzzi.jpg",
     "feedImg": "./images/miyeon/cat.jpg",
     "feedContent": "박버찌 기다려.. 집사가 곧 냥줍 하러 간다..",
@@ -47,8 +47,8 @@
     ]
   },
   {
-    "no": 3,
-    "userID": "bluecat",
+    "id": 3,
+    "user_id": "bluecat",
     "userProfileImg": "./images/miyeon/cat1.jpg",
     "feedImg": "./images/miyeon/userCat2.jpg",
     "feedContent": "나만 보면 드러눕는 길냥이.. 배 만져부러!!",

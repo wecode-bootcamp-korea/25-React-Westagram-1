@@ -38,8 +38,7 @@
       }
     }
 
-    #idInput,
-    #pwInput {
+    input {
       width: 268px;
       height: 38px;
       border: 1px solid;
@@ -52,8 +51,7 @@
       background-color: #fafafa;
     }
 
-    #idInput,
-    #pwInput:focus {
+    input:focus {
       outline: none;
     }
 

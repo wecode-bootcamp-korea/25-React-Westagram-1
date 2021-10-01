@@ -6,29 +6,28 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      idVal: '',
-      pwVal: '',
+      idValue: '',
+      pwValue: '',
       buttonColor: false,
     };
   }
 
   handleIdInput = e => {
     this.setState({
-      idVal: e.target.value,
+      idValue: e.target.value,
     });
   };
 
   handlePwInput = e => {
     this.setState({
-      pwVal: e.target.value,
+      pwValue: e.target.value,
     });
   };
 
   buttonColorChange = () => {
-    const { idVal, pwVal } = this.state;
-    idVal.includes('@') && pwVal.length >= 5
-      ? this.setState({ buttonColor: true })
-      : this.setState({ buttonColor: false });
+    const { idValue, pwValue } = this.state;
+    const isButtonActive = idValue.includes('@') && pwValue.length >= 5;
+    this.setState({ buttonColor: isButtonActive });
   };
 
   goToMain = e => {
@@ -36,8 +35,8 @@ class Login extends React.Component {
     fetch('http://10.58.4.36:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
-        email: this.state.idVal,
-        password: this.state.pwVal,
+        email: this.state.idValue,
+        password: this.state.pwValue,
       }),
     })
       .then(response => response.json())
@@ -50,14 +49,15 @@ class Login extends React.Component {
         }
       });
     // 프론트와 백엔드 통신 이전 로그인 유효성 검사
-    // const { idVal, pwVal } = this.state;
-    // idVal === 'buzzi_nyang@happy' && pwVal === '123456'
+    // const { idValue, pwValue } = this.state;
+    // idValue === 'buzzi_nyang@happy' && pwValue === '123456'
     //   ? this.props.history.push('/Main-MiYeon')
     //   : e.preventDefault();
     // alert('캣스타그램 계정 주인만 로그인할 수 있습니다');
   };
 
   render() {
+    const { buttonColor } = this.state;
     return (
       <section className="loginMiyeon">
         <article>
@@ -84,9 +84,7 @@ class Login extends React.Component {
                   placeholder="비밀번호"
                   onChange={this.handlePwInput}
                 />
-                <button
-                  className={this.state.buttonColor ? 'loginOn' : 'loginOff'}
-                >
+                <button className={buttonColor ? 'loginOn' : 'loginOff'}>
                   로그인
                 </button>
                 <Link to="#" className="pwForgot">

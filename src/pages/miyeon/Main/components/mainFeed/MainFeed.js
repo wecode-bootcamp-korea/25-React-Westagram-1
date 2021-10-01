@@ -22,7 +22,7 @@ class Mainfeed extends Component {
   };
 
   render() {
-    const { userData } = this.props;
+    const { userData, likeNumber } = this.props;
     return (
       <article className="wrapper">
         <div className="feedHeader">
@@ -32,7 +32,7 @@ class Mainfeed extends Component {
               src={userData.userProfileImg}
               alt="my cutie cat"
             />
-            <div className="myName">{userData.userID}</div>
+            <div className="myName">{userData.user_id}</div>
           </div>
           <div className="headerRight">
             <img src="./images/miyeon/more.png" alt="more" />
@@ -74,12 +74,12 @@ class Mainfeed extends Component {
             />
           </div>
           <div className="likeWho">
-            <b>{userData.userID}</b>님 <b>외 {this.props.likeNumber}명이</b>
+            <b>{userData.user_id}</b>님 <b>외 {likeNumber}명이</b>
             &nbsp; 좋아합니다.
           </div>
         </div>
         <div className="feedContent">
-          <b>{userData.userID}</b>&nbsp; {userData.feedContent}
+          <b>{userData.user_id}</b>&nbsp; {userData.feedContent}
         </div>
         <Comment
           uploadTime={userData.uploadTime}

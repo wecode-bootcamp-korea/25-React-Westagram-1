@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import CenterBar from './components/topUserSearch/CenterBar';
 import MainFeed from './components/mainFeed/MainFeed';
 import './Main.scss';
@@ -30,7 +31,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="mainMiyeon">
+      <dv className="mainMiyeon">
         <header className="mainHeader">
           <nav className="mainNav">
             <div className="leftBar">
@@ -92,7 +93,13 @@ class Main extends Component {
         <section className="mainSection">
           <div>
             {this.state.feedInfo.map(user => {
-              return <MainFeed userData={user} key={user.no} />;
+              return (
+                <MainFeed
+                  userData={user}
+                  key={user.no}
+                  likeNumber={user.likeNumber}
+                />
+              );
             })}
           </div>
           <div className="mainRight">
@@ -115,9 +122,9 @@ class Main extends Component {
                 <div className="user1">
                   <img src="./images/miyeon/user1.jpg" alt="my friend's dog" />
                   <div className="userID">
-                    <span href="#" className="whatID">
+                    <Link to="#" className="whatID">
                       <b>mydog_syuli</b>
-                    </span>
+                    </Link>
                     <p className="beforeUpload">16분 전</p>
                   </div>
                 </div>
@@ -127,18 +134,18 @@ class Main extends Component {
                     alt="corona 2nd complete"
                   />
                   <div className="userID">
-                    <span href="#" className="whatID">
+                    <Link to="#" className="whatID">
                       <b>v_ddabong_v</b>
-                    </span>
+                    </Link>
                     <p className="beforeUpload">1시간 전</p>
                   </div>
                 </div>
                 <div className="user3">
                   <img src="./images/miyeon/user3.jpg" alt="3d cat car" />
                   <div className="userID">
-                    <span href="#" className="whatID">
+                    <Link to="#" className="whatID">
                       <b>iwascar</b>
-                    </span>
+                    </Link>
                     <p className="beforeUpload">20시간 전</p>
                   </div>
                 </div>
@@ -153,27 +160,27 @@ class Main extends Component {
                 <div className="user1">
                   <img src="./images/miyeon/cat1.jpg" alt="blue cat" />
                   <div className="userID">
-                    <span href="#" className="whatID">
+                    <Link to="#" className="whatID">
                       <b>bluecat</b>
-                    </span>
+                    </Link>
                     <p className="beforeUpload">16분 전</p>
                   </div>
                 </div>
                 <div className="user2">
                   <img src="./images/miyeon/user4.jpg" alt="3d cat" />
                   <div className="userID">
-                    <span href="#" className="whatID">
+                    <Link to="#" className="whatID">
                       <b>cat_choding</b>
-                    </span>
+                    </Link>
                     <p className="beforeUpload">1시간 전</p>
                   </div>
                 </div>
                 <div className="user3">
                   <img src="./images/miyeon/cat3.jpg" alt="white cat" />
                   <div className="userID">
-                    <span className="whatID">
+                    <Link className="whatID">
                       <b>nyangX2_punch</b>
-                    </span>
+                    </Link>
                     <p className="beforeUpload">20시간 전</p>
                   </div>
                 </div>
@@ -188,7 +195,7 @@ class Main extends Component {
             </footer>
           </div>
         </section>
-      </div>
+      </dv>
     );
   }
 }

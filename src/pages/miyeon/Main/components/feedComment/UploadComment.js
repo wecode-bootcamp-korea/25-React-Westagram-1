@@ -12,7 +12,7 @@ class UploadComment extends Component {
     this.setState({
       commentHeartBtn: !this.state.commentHeartBtn,
     });
-  }; // 좋아요 기능 - 하트 클릭시 진한 컬러 하트로 변경
+  };
 
   render() {
     const { comment, deleteComment } = this.props;

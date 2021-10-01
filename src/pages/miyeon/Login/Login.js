@@ -9,20 +9,20 @@ class Login extends React.Component {
       idVal: '',
       pwVal: '',
       buttonColor: false,
-    }; // id와 pw의 state값 초기화
+    };
   }
 
   handleIdInput = e => {
     this.setState({
       idVal: e.target.value,
     });
-  }; // id값 state에 저장
+  };
 
   handlePwInput = e => {
     this.setState({
       pwVal: e.target.value,
     });
-  }; // pw값 state에 저장
+  };
 
   buttonColorChange = () => {
     const { idVal, pwVal } = this.state;
@@ -89,9 +89,10 @@ class Login extends React.Component {
                 >
                   로그인
                 </button>
-                <Link onClick={this.goToMain} className="pwForgot">
+                <Link to="#" className="pwForgot">
                   비밀번호를 잊으셨나요?
                 </Link>
+                {/* 이동할 경로가 없어 경로 미지정 */}
               </form>
             </div>
           </div>

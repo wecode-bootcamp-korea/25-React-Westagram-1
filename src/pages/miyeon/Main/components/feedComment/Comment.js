@@ -44,8 +44,7 @@ class Comment extends Component {
     });
     let length = document.getElementsByClassName('.wrapper').length;
     e.target[length].value = '';
-    // input창의 value 텍스트를 지움
-    // 메인 피드 개수를 계산함
+    // 메인 피드 개수를 계산하여, input창의 value 텍스트를 지움
   };
 
   uploadDeleteComment = id => {

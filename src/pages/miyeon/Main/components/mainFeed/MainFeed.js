@@ -1,3 +1,4 @@
+import { thisExpression } from '@babel/types';
 import React, { Component } from 'react';
 import Comment from '../feedComment/Comment';
 
@@ -6,15 +7,17 @@ class Mainfeed extends Component {
     super();
     this.state = {
       heartBtn: false,
+      likeNumber: 0,
     };
   }
 
   heartBtnActive = () => {
+    const { heartBtn } = this.state;
     this.setState({
-      heartBtn: !this.state.heartBtn,
-      likeNumber: !this.state.heartBtn
-        ? this.state.likeNumber + 1
-        : this.state.likeNumber - 1,
+      heartBtn: !heartBtn,
+      likeNumber: !heartBtn
+        ? this.props.likeNumber + 1
+        : this.props.likeNumber - 1,
     });
   };
 
@@ -71,7 +74,7 @@ class Mainfeed extends Component {
             />
           </div>
           <div className="likeWho">
-            <b>{userData.userID}</b>님 <b>외 {userData.likeNumber}명이</b>
+            <b>{userData.userID}</b>님 <b>외 {this.props.likeNumber}명이</b>
             &nbsp; 좋아합니다.
           </div>
         </div>

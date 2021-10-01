@@ -3,25 +3,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackspace } from '@fortawesome/free-solid-svg-icons';
 
 class CommentWnd extends React.Component {
-  showComment = () => {
+  render() {
     const { commentsInfo, deleteComment } = this.props;
 
-    return commentsInfo.list.map(e => (
-      <li className="content" key={e.key}>
-        <div>
-          <span className="username">{e.name} </span>
-          {e.comment}
-        </div>
-        <FontAwesomeIcon
-          icon={faBackspace}
-          onClick={() => deleteComment(e.key)}
-        />
-      </li>
-    ));
-  };
-
-  render() {
-    return <ul>{this.showComment()}</ul>;
+    return (
+      <ul>
+        {commentsInfo.list.map(comment => (
+          <li className="content" key={comment.key}>
+            <div>
+              <span className="username">{comment.name} </span>
+              {comment.comment}
+            </div>
+            <FontAwesomeIcon
+              icon={faBackspace}
+              onClick={() => deleteComment(comment.key)}
+            />
+          </li>
+        ))}
+      </ul>
+    );
   }
 }
 

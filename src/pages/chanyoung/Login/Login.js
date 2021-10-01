@@ -4,21 +4,7 @@ import LoginForm from './components/LoginForm';
 import './Login.scss';
 
 class Login extends React.Component {
-  goToMain = (id, pw, e) => {
-    e.preventDefault();
-    fetch('http://10.58.2.15:8000/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: id,
-        password: pw,
-      }),
-    })
-      .then(res => res.json())
-      .then(result => {
-        result.MESSAGE === 'SUCCESS' &&
-          this.props.history.push('/Main-ChanYoung');
-      });
-  };
+  goToMain = () => this.props.history.push('/Main-ChanYoung');
 
   render() {
     return (

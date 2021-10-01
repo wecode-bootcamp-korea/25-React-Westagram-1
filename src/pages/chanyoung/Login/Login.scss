@@ -1,5 +1,12 @@
 @import '../../../styles/common';
 
+@mixin button($bgColor) {
+  border: none;
+  background-color: $bgColor;
+  color: white;
+  font-size: 25px;
+}
+
 .chanyoungLogin {
   display: flex;
   justify-content: center;
@@ -62,17 +69,11 @@
   }
 
   .button {
-    border: none;
-    background-color: blue;
-    color: white;
-    font-size: 25px;
+    @include button(rgb(50, 50, 190));
   }
 
   .buttonDisabled {
-    border: none;
-    background-color: #c4e1fb;
-    color: white;
-    font-size: 25px;
+    @include button(rgb(215, 236, 245));
   }
 
   .findPassword {

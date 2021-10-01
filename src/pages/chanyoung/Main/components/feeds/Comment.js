@@ -53,8 +53,8 @@ class Comment extends React.Component {
   deleteComment = key => {
     this.setState(({ commentsInfo: { list, nextKey } }) => ({
       commentsInfo: {
-        list: list.filter(e => key !== e.key),
-        nextKey: nextKey,
+        list: list.filter(comment => key !== comment.key),
+        nextKey,
       },
     }));
   };

@@ -1,5 +1,6 @@
 import React from 'react';
 import Feed from './components/feeds/Feed';
+import Stories from './components/side/Stories';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Main.scss';
@@ -61,56 +62,7 @@ class Main extends React.Component {
                 <span className="headerTitle--sub">WeCode | 위코드</span>
               </div>
             </div>
-            <div className="stories">
-              <div className="storiesHeader">
-                <span className="storiesHeaderTitle">스토리</span>
-                <span className="storiesHeaderAll">모두 보기</span>
-              </div>
-              <div className="storiesUser">
-                <img
-                  className="userImg"
-                  src="/images/chanyoung/cat3.jpg"
-                  alt="cat3"
-                />
-                <div className="storiesUserText">
-                  <span className="username">_yum_s</span>
-                  <span className="storiesUserTime">16분 전</span>
-                </div>
-              </div>
-              <div className="storiesUser">
-                <img
-                  className="userImg"
-                  src="/images/chanyoung/cat1.jpg"
-                  alt="cat1"
-                />
-                <div className="storiesUserText">
-                  <span className="username">drink_eat_drink</span>
-                  <span className="storiesUserTime">3시간 전</span>
-                </div>
-              </div>
-              <div className="storiesUser">
-                <img
-                  className="userImg"
-                  src="/images/chanyoung/dog1.jpg"
-                  alt="dog1"
-                />
-                <div className="storiesUserText">
-                  <span className="username">hyukyc</span>
-                  <span className="storiesUserTime">20시간 전</span>
-                </div>
-              </div>
-              <div className="storiesUser">
-                <img
-                  className="userImg"
-                  src="/images/chanyoung/dog2.jpg"
-                  alt="dog2"
-                />
-                <div className="storiesUserText">
-                  <span className="username">_yum_s</span>
-                  <span className="storiesUserTime">16분 전</span>
-                </div>
-              </div>
-            </div>
+            <Stories />
             <div className="recommends">
               <div className="recommendsHeader">
                 <span className="recommendsHeaderTitle">스토리</span>

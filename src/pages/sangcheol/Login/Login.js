@@ -14,58 +14,51 @@ class Login extends React.Component {
     this.setState({
       id: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   handlePasswordInput = e => {
     this.setState({
       password: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   goToMain = e => {
+    const { id, password } = this.state;
     e.preventDefault();
-    fetch('http://10.58.5.199:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.id,
-        password: this.state.password,
-        // name: '이상철',
-        // phone: '010-0000-0000',
-      }),
-    })
-      .then(response => response.json())
-      .then(response => {
-        if (response.token) {
-          localStorage.setItem('token', response.token);
-          this.props.history.push('/Main-SangCheol');
-        }
-      });
+    // fetch('http://10.58.5.199:8000/users/signin', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: id,
+    //     password: password,
+    //     // name: '이상철',
+    //     // phone: '010-0000-0000',
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(response => {
+    //     if (response.token) {
+    //       localStorage.setItem('token', response.token);
+    //       this.props.history.push('/Main-SangCheol');
+    //     }
+    //   });
 
-    // const { id, password } = this.state;
-    // id === 'zlrz002@naver.com' && password === 'tkdas6708@'
-    //   ? this.props.history.push('/Main-SangCheol')
-    //   : alert('아이디와 비밀번호를 확인해주세요');
+    id === 'zlrz002@naver.com' && password === 'tkdas6708@'
+      ? this.props.history.push('/Main-SangCheol')
+      : alert('아이디와 비밀번호를 확인해주세요');
   };
 
   handleInputText = e => {
     const { id, password } = this.state;
-    id.includes('@') && password.length >= 5
-      ? this.setState({
-          offButton: true,
-        })
-      : this.setState({
-          offButton: false,
-        });
+    const isButtonActive = id.includes('@') && password.length >= 5;
+    this.setState({ isButtonActive });
   };
 
   render() {
     return (
       <div className=" sangcheol-Login">
-        <section id="section">
-          <div id="inner">
-            <h1 id="logo-text">Westagram</h1>
+        <section className="section">
+          <div className="inner">
+            <h1 className="logo-text">Westagram</h1>
             <form onChange={this.handleInputText} className="input-box">
               <input
                 type="text"
@@ -80,12 +73,12 @@ class Login extends React.Component {
                 onChange={this.handlePasswordInput}
               />
               <button
-                className={this.state.offButton ? 'btnon' : 'offButton'}
+                className={this.state.offButton ? 'btnOn' : 'offButton'}
                 onClick={this.goToMain}
               >
                 로그인
               </button>
-              <a id="footer_link" href="Null">
+              <a className="footer_link" href="Null">
                 비밀번호를 잊으셨나요 ?
               </a>
             </form>

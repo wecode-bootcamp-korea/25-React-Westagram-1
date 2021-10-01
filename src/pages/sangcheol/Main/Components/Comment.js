@@ -8,7 +8,6 @@ class Comment extends React.Component {
         <form className="main_comment">
           <input
             className="main_comment_text"
-            type="text"
             placeholder="댓글 달기..."
             name={id}
             onChange={handleInput}

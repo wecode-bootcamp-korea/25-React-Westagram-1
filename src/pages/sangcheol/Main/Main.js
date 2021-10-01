@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Components/Header';
 import Feed from './Components/Feed';
-import MainRight from './Components/MainRight';
+import Aside from './Components/Aside';
 import './Main.scss';
 import './Main-section.scss';
 import '../../../styles/reset.scss';
@@ -74,7 +74,7 @@ class Main extends React.Component {
               );
             })}
           </div>
-          <MainRight />
+          <Aside />
         </section>
       </div>
     );

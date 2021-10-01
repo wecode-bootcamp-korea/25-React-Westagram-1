@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
-class MainRight extends Component {
+class Aside extends Component {
   render() {
     return (
       <div className="main-right">
@@ -120,4 +120,4 @@ class MainRight extends Component {
   }
 }
 
-export default MainRight;
+export default Aside;

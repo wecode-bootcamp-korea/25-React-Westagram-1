@@ -4,22 +4,32 @@ import CommentList from './CommentList';
 
 class Feed extends Component {
   render() {
-    const { inputKeyword, commentBox, handleInput, handleSubmit } = this.props;
+    const {
+      id,
+      userId,
+      userLocation,
+      userImage,
+      userLikedImage,
+      howManyLiked,
+      content,
+      commentBox,
+      inputKeyword,
+      handleInput,
+      handleSubmit,
+    } = this.props;
 
     return (
       <div className="feeds">
         <div className="user-id-box">
           <img src="./images/sangcheol/wecodeLogo.jpeg" alt="logo" />
           <div className="user-id-box-text">
-            <div>Xangcheol</div>
-            <div>Byron Bay </div>
+            <div>{userId}</div>
+            <div>{userLocation}</div>
           </div>
         </div>
-
         <div className="feed-img-section">
-          <img src="./images/sangcheol/피드용 사진.jpeg" alt="img" />
+          <img src={userImage} alt="img" />
         </div>
-
         <div className="main-icon-like-text">
           <div className="iconbox">
             <img
@@ -36,33 +46,24 @@ class Feed extends Component {
             <div className="main-like-text-box-image">
               <img
                 className="main-like-text-box-image-main"
-                src="./images/sangcheol/위코드 피드사진.jpeg"
+                src={userLikedImage}
                 alt="profile"
               />
               <span>
-                xangcheol님 <strong>외 25명</strong>이 좋아합니다.
+                {userId}님 <strong>외 {howManyLiked}명</strong>이 좋아합니다.
               </span>
             </div>
-            <CommentList commentBox={commentBox} />
-            <ul className="main-icon-like-text-write_comment">
-              {commentBox.map((el, idx) => {
-                return (
-                  <li key={idx + 1}>
-                    <span className="userName">Xangcheol</span>
-                    <span className="main-icon-like-text-write-subtext">
-                      {el}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
+
             <div className="main-icon-like-text-write-footer">1시간 전</div>
           </div>
         </div>
+        <CommentList content={content} />
         <Comment
-          inputKeyword={inputKeyword}
+          id={id}
           handleInput={handleInput}
+          commentBox={commentBox}
           handleSubmit={handleSubmit}
+          inputKeyword={inputKeyword}
         />
       </div>
     );

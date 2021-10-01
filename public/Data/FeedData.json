@@ -1,17 +1,55 @@
 [
   {
-    "id": 1,
+    "id": "P1",
     "userId": "xangcheol",
     "userLocation": "Byron Bay",
-    "userImage": "images/sangcheol/피드용사진.jpeg",
+    "userImage": "images/sangcheol/wecodeLogo.jpeg",
+    "userLikedImage": "images/sangcheol/피드용 사진.jpeg",
+    "userLikedAccount": "xangcheol",
+    "howManyLiked": 25,
+    "feedText": "민지님 짱짱",
+    "content": [
+      {
+        "id": 1,
+        "userId": "Minji",
+        "content": "i'm best teacher"
+      }
+    ]
+  },
+
+  {
+    "id": "P2",
+    "userId": "Minjjjjjji",
+    "userLocation": "in my house",
+    "userImage": "images/sangcheol/위코드 피드사진.jpeg",
+    "userLikedImage": "images/sangcheol/프사용.JPG",
+    "userLikedAccount": "xangcheol",
+    "howManyLiked": 25,
+    "feedText": "미연님 짱짱",
+    "content": [
+      {
+        "id": 2,
+        "userId": "MinjiMi",
+        "content": "i'm best teacher"
+      }
+    ]
+  },
+
+  {
+    "id": "P3",
+    "userId": "거북",
+    "userLocation": "heart",
+    "userImage": "images/sangcheol/피드용 사진.jpeg",
     "userLikedImage": "images/sangcheol/프사용.JPG",
     "userLikedAccount": "xangcheol",
     "howManyLiked": 25,
     "feedText": "민지님 짱짱",
-    "content": {
-      "id": 1,
-      "userId": "Minji",
-      "content": "i'm best teacher"
-    }
+    "content": [
+      {
+        "id": 3,
+        "userId": "Miyeon",
+        "content": "i'm best teacher"
+      }
+    ]
   }
 ]

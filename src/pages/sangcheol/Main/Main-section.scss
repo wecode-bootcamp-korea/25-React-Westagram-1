@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin: 50px 30px;
+
   .feeds {
     display: flex;
     flex-direction: column;
@@ -141,7 +142,7 @@
 
   .main-right {
     margin-top: 30px;
-    width: 300px;
+    width: 350px;
 
     .main-right-userinfo {
       display: flex;

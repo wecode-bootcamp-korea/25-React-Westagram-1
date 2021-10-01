@@ -24,11 +24,29 @@ class Login extends React.Component {
     console.log(e.target.value);
   };
 
-  goToMain = () => {
-    const { id, password } = this.state;
-    id === 'zlrz002@naver.com' && password === 'tkdas6708@'
-      ? this.props.history.push('/Main-SangCheol')
-      : alert('아이디와 비밀번호를 확인헤주세요');
+  goToMain = e => {
+    e.preventDefault();
+    fetch('http://10.58.5.199:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.password,
+        // name: '이상철',
+        // phone: '010-0000-0000',
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          this.props.history.push('/Main-SangCheol');
+        }
+      });
+
+    // const { id, password } = this.state;
+    // id === 'zlrz002@naver.com' && password === 'tkdas6708@'
+    //   ? this.props.history.push('/Main-SangCheol')
+    //   : alert('아이디와 비밀번호를 확인해주세요');
   };
 
   handleInputText = e => {

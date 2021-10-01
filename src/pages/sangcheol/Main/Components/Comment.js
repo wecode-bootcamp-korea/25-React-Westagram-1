@@ -1,28 +1,22 @@
 import React from 'react';
 
 class Comment extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      commentBox: [],
-    };
-  }
-
   render() {
-    const { handleInput, handleSubmit, inputKeyword } = this.props;
-
+    const { id, handleInput, handleSubmit, inputKeyword } = this.props;
     return (
       <div>
-        <form className="main_comment" onSubmit={handleSubmit}>
+        <form className="main_comment">
           <input
             className="main_comment_text"
             type="text"
             placeholder="댓글 달기..."
+            name={id}
             onChange={handleInput}
             value={inputKeyword}
           />
-          <button className="main_comment_submit">게시</button>
+          <button className="main_comment_submit" onClick={handleSubmit}>
+            게시
+          </button>
         </form>
       </div>
     );

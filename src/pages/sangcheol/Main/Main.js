@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Components/Header';
 import Feed from './Components/Feed';
 import MainRight from './Components/MainRight';
@@ -19,6 +18,7 @@ class Main extends React.Component {
   }
 
   handleInput = e => {
+    console.log(e.target.name);
     this.setState({
       inputKeyword: e.target.value,
     });
@@ -34,18 +34,46 @@ class Main extends React.Component {
     });
   };
 
+  componentDidMount() {
+    fetch('http://localhost:3000/Data/FeedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentBox: data,
+        });
+      });
+  }
+
   render() {
     const { inputKeyword, commentBox } = this.state;
+
     return (
       <div className="sangcheol-Main">
         <Header />
         <section className="section">
-          <Feed
-            inputKeyword={inputKeyword}
-            commentBox={commentBox}
-            handleInput={this.handleInput}
-            handleSubmit={this.handleSubmit}
-          />
+          <div>
+            {this.state.commentBox.map(el => {
+              return (
+                <Feed
+                  inputKeyword={inputKeyword}
+                  commentBox={commentBox}
+                  handleInput={this.handleInput}
+                  handleSubmit={this.handleSubmit}
+                  id={el.id}
+                  userId={el.userId}
+                  userLocation={el.userLocation}
+                  userImage={el.userImage}
+                  userLikedImage={el.userLikedImage}
+                  userLikedAccount={el.userLikedAccount}
+                  howManyLiked={el.howManyLiked}
+                  feedText={el.feedText}
+                  content={el.content}
+                />
+              );
+            })}
+          </div>
           <MainRight />
         </section>
       </div>

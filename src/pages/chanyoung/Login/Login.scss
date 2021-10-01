@@ -1,0 +1,85 @@
+@import '../../../styles/common';
+
+@mixin button($bgColor) {
+  border: none;
+  background-color: $bgColor;
+  color: white;
+  font-size: 25px;
+}
+
+.chanyoungLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(250, 250, 250);
+
+  header {
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 70px;
+  }
+
+  .mainWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 75px;
+    border: 2px solid #e6e6e6;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    width: 485px;
+    height: 230px;
+    margin-top: 95px;
+    margin-bottom: 185px;
+
+    * {
+      height: 65px;
+      border-radius: 8px;
+      font-size: 20px;
+    }
+
+    input {
+      padding: 25px 15px;
+      border: 3px solid #efefef;
+      background-color: #fafafa;
+      font-weight: bold;
+      outline: none;
+
+      &::placeholder {
+        color: #9b9b9b;
+      }
+    }
+
+    button {
+      outline: none;
+    }
+  }
+
+  .id {
+    margin-bottom: 10px;
+  }
+
+  .pw {
+    margin-bottom: 25px;
+  }
+
+  .button {
+    @include button(rgb(50, 50, 190));
+  }
+
+  .buttonDisabled {
+    @include button(rgb(215, 236, 245));
+  }
+
+  .findPassword {
+    text-align: center;
+    color: #376088;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

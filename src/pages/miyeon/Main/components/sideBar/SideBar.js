@@ -1,8 +1,35 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import RecommendUser from './RecommendUser';
+import StoryUser from './StoryUser';
 
 class SideBar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      storyArr: [],
+      recommendArr: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/miyeon/data/myStory.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          storyArr: data,
+        })
+      );
+    fetch('http://localhost:3000/miyeon/data/myRecommend.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          recommendArr: data,
+        })
+      );
+  }
+
   render() {
+    console.log(this.state.storyArr);
     return (
       <div className="mainRight">
         <div className="myProfile">
@@ -21,33 +48,9 @@ class SideBar extends Component {
             <div className="sideRight">모두 보기</div>
           </div>
           <div className="sideBottom">
-            <div className="user1">
-              <img src="./images/miyeon/user1.jpg" alt="my friend's dog" />
-              <div className="userID">
-                <Link to="#" className="whatID">
-                  <b>mydog_syuli</b>
-                </Link>
-                <p className="beforeUpload">16분 전</p>
-              </div>
-            </div>
-            <div className="user2">
-              <img src="./images/miyeon/user2.jpg" alt="corona 2nd complete" />
-              <div className="userID">
-                <Link to="#" className="whatID">
-                  <b>v_ddabong_v</b>
-                </Link>
-                <p className="beforeUpload">1시간 전</p>
-              </div>
-            </div>
-            <div className="user3">
-              <img src="./images/miyeon/user3.jpg" alt="3d cat car" />
-              <div className="userID">
-                <Link to="#" className="whatID">
-                  <b>iwascar</b>
-                </Link>
-                <p className="beforeUpload">20시간 전</p>
-              </div>
-            </div>
+            {this.state.storyArr.map(user => {
+              return <StoryUser storyUser={user} key={user.id} />;
+            })}
           </div>
         </div>
         <div className="sideMenu">
@@ -56,33 +59,9 @@ class SideBar extends Component {
             <div className="sideRight">모두 보기</div>
           </div>
           <div className="sideBottom">
-            <div className="user1">
-              <img src="./images/miyeon/cat1.jpg" alt="blue cat" />
-              <div className="userID">
-                <Link to="#" className="whatID">
-                  <b>bluecat</b>
-                </Link>
-                <p className="beforeUpload">16분 전</p>
-              </div>
-            </div>
-            <div className="user2">
-              <img src="./images/miyeon/user4.jpg" alt="3d cat" />
-              <div className="userID">
-                <Link to="#" className="whatID">
-                  <b>cat_choding</b>
-                </Link>
-                <p className="beforeUpload">1시간 전</p>
-              </div>
-            </div>
-            <div className="user3">
-              <img src="./images/miyeon/cat3.jpg" alt="white cat" />
-              <div className="userID">
-                <Link className="whatID">
-                  <b>nyangX2_punch</b>
-                </Link>
-                <p className="beforeUpload">20시간 전</p>
-              </div>
-            </div>
+            {this.state.recommendArr.map(user => {
+              return <RecommendUser recommendUser={user} key={user.id} />;
+            })}
           </div>
         </div>
         <footer>

@@ -3,6 +3,36 @@ import Comment from './Comment';
 import CommentList from './CommentList';
 
 class Feed extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      inputKeyword: '',
+      comment: [],
+    };
+  }
+
+  // componentDidMount() {
+  //   this.setState({
+  //     comment: this.props.content,
+  //   });
+  // }
+
+  handleInput = e => {
+    this.setState({
+      inputKeyword: e.target.value,
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    if (this.state.inputKeyword.length === 0) return;
+
+    this.setState({
+      comment: this.state.comment.concat(this.state.inputKeyword),
+      inputKeyword: '',
+    });
+  };
   render() {
     const {
       id,
@@ -12,14 +42,13 @@ class Feed extends Component {
       userLikedImage,
       howManyLiked,
       content,
-      commentBox,
-      inputKeyword,
-      handleInput,
-      handleSubmit,
     } = this.props;
 
+    console.log('content', content);
+    console.log('state', this.state.comment);
+
     return (
-      <div className="feeds">
+      <div className="feeds" key={id}>
         <div className="user-id-box">
           <img src="./images/sangcheol/wecodeLogo.jpeg" alt="logo" />
           <div className="user-id-box-text">
@@ -59,11 +88,10 @@ class Feed extends Component {
         </div>
         <CommentList content={content} />
         <Comment
-          id={id}
-          handleInput={handleInput}
-          commentBox={commentBox}
-          handleSubmit={handleSubmit}
-          inputKeyword={inputKeyword}
+          inputKeyword={this.inputKeyword}
+          comment={this.state.comment}
+          handleSubmit={this.handleSubmit}
+          handleInput={this.state.handleInput}
         />
       </div>
     );

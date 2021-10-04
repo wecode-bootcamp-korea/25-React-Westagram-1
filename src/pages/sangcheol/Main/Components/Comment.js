@@ -5,7 +5,7 @@ class Comment extends React.Component {
     const { id, handleInput, handleSubmit, inputKeyword } = this.props;
     return (
       <div>
-        <form className="main_comment">
+        <form className="main_comment" key={key}>
           <input
             className="main_comment_text"
             placeholder="댓글 달기..."

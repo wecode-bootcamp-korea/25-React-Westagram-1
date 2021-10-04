@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
+import AddComment from './AddComment';
 
 class CommentList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      commentBox: [],
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      commentBox: this.props.content,
-    });
-  }
-
   render() {
-    console.log(this.state.commentBox);
+    const { content } = this.props;
     return (
-      <div></div>
-      // <ul className="main-icon-like-text-write_commentbox">
-      //   {this.state.commentBox.map((el, idx) => {
-      //     return (
-      //       <li key={idx + 1}>
-      //         <span className="userName">{el.userId}</span>
-      //         <span className="main-icon-like-text-write-subtext">
-      //           {el.content}
-      //         </span>
-      //       </li>
-      //     );
-      //   })}
-      // </ul>
+      <>
+        <ul className="main-icon-like-text-write_commentbox">
+          {content.map(el => {
+            return (
+              <li key={el.id}>
+                <span className="userName">{el.userId}</span>
+                <span className="main-icon-like-text-write-subtext">
+                  {el.content}
+                </span>
+              </li>
+            );
+          })}
+          {/* 고정된 댓글 */}
+        </ul>
+        <AddComment content={content} />
+      </>
     );
   }
 }

@@ -12,27 +12,27 @@ class Main extends React.Component {
     super();
 
     this.state = {
-      inputKeyword: '',
-      commentBox: [],
+      // inputKeyword: '',
+      feedList: [],
     };
   }
 
-  handleInput = e => {
-    console.log(e.target.name);
-    this.setState({
-      inputKeyword: e.target.value,
-    });
-  };
+  // handleInput = e => {
+  //   console.log(e.target.name);
+  //   this.setState({
+  //     inputKeyword: e.target.value,
+  //   });
+  // };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    if (this.state.inputKeyword.length === 0) return;
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   if (this.state.inputKeyword.length === 0) return;
 
-    this.setState({
-      commentBox: this.state.commentBox.concat(this.state.inputKeyword),
-      inputKeyword: '',
-    });
-  };
+  //   this.setState({
+  //     comment: this.state.comment.concat(this.state.inputKeyword),
+  //     inputKeyword: '',
+  //   });
+  // };
 
   componentDidMount() {
     fetch('http://localhost:3000/Data/FeedData.json', {
@@ -41,27 +41,24 @@ class Main extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          commentBox: data,
+          feedList: data,
         });
+        console.log(data);
       });
   }
 
   render() {
-    const { inputKeyword, commentBox } = this.state;
+    const { feedList } = this.state;
 
     return (
       <div className="sangcheol-Main">
         <Header />
         <section className="section">
           <div>
-            {this.state.commentBox.map(el => {
+            {feedList.map(el => {
               return (
                 <Feed
-                  inputKeyword={inputKeyword}
-                  commentBox={commentBox}
-                  handleInput={this.handleInput}
-                  handleSubmit={this.handleSubmit}
-                  id={el.id}
+                  key={el.id}
                   userId={el.userId}
                   userLocation={el.userLocation}
                   userImage={el.userImage}

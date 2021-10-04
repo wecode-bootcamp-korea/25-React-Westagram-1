@@ -1,4 +1,3 @@
-import { thisExpression } from '@babel/types';
 import React, { Component } from 'react';
 import Comment from '../feedComment/Comment';
 

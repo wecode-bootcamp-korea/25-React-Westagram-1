@@ -40,7 +40,7 @@ class Comment extends Component {
     ];
     this.setState({
       commentList: newArr,
-      inputVal: '', // state 값만 빈값으로 되고, input창의 value 텍스트는 지워지지 않았음
+      inputVal: '',
     });
   };
 

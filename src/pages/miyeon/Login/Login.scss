@@ -1,0 +1,103 @@
+/* instagram h1 font */
+@import 'https://fonts.googleapis.com/css2?family=Style+Script&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@330&display=swap';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10pt;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginMiyeon {
+  @include flex-center;
+
+  .loginBox {
+    position: relative;
+    top: 200px;
+    width: 348px;
+    height: 368px;
+    margin: 0 auto;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+    background-color: white;
+
+    .catstaLogo1 {
+      font-family: 'Style Script', cursive;
+      font-weight: bold;
+      font-size: 30pt;
+      margin: 30px;
+      .catFoot {
+        margin-left: 10px;
+        width: 10%;
+      }
+    }
+
+    input {
+      width: 268px;
+      height: 38px;
+      border: 1px solid;
+      margin-bottom: 6px;
+      padding-top: 8px;
+      padding-bottom: 7px;
+      padding-left: 10px;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background-color: #fafafa;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    ::placeholder {
+      font-size: 10pt;
+    }
+
+    .loginOff {
+      width: 268px;
+      height: 38px;
+      padding-top: 10px;
+      padding-bottom: 7px;
+      padding-left: 8px;
+      color: white;
+      background-color: #b9def7;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .loginOn {
+      width: 268px;
+      height: 38px;
+      padding-top: 10px;
+      padding-bottom: 7px;
+      padding-left: 8px;
+      color: white;
+      background-color: #0095f6;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .pwForgot {
+      display: inline-block;
+      position: relative;
+      top: 50px;
+      margin-top: 12px;
+      color: #00376b;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      text-decoration-line: none;
+      cursor: pointer;
+    }
+  }
+}

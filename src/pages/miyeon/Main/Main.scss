@@ -1,0 +1,454 @@
+/* instagram h1 font */
+@import 'https://fonts.googleapis.com/css2?family=Style+Script&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@330&display=swap';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10pt;
+}
+
+body {
+  background-color: #fafafa;
+  margin: 0;
+
+  .mainMiyeon {
+    background-color: #fafafa;
+
+    .myName {
+      display: inline;
+      font-size: 12pt;
+      font-weight: bold;
+      margin-top: 2px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .mainHeader {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      border-bottom: 1px solid #dbdbdb;
+      z-index: 9999;
+
+      .mainNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 920px;
+        height: 55px;
+
+        .catstaLogo {
+          padding-right: 12px;
+
+          .catFoot {
+            width: 15px;
+          }
+        }
+
+        .catstaText {
+          padding-left: 12px;
+          border-left: 1px solid black;
+          color: black;
+          text-decoration: none;
+
+          .catstaLogo2 {
+            display: inline-block;
+            font-family: 'Style Script', cursive;
+            font-weight: bold;
+            font-size: 17pt;
+          }
+        }
+
+        .centerBar {
+          position: relative;
+
+          .searchOff {
+            display: none;
+          }
+
+          .searchOn {
+            position: absolute;
+            top: 29px;
+            right: -26px;
+            width: 270px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: white;
+            z-index: 9999;
+
+            .searchUsersul {
+              padding-left: 0;
+              margin: 0 auto;
+
+              .searchUsers {
+                display: flex;
+                align-items: center;
+                padding-left: 13px;
+                border-bottom: 1px solid #dbdbdb;
+                list-style: none;
+
+                &:hover {
+                  background-color: #fafafa;
+                }
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 100px;
+                }
+
+                .searchUsersInfo {
+                  display: inline-block;
+                  margin-left: 13px;
+                }
+              }
+            }
+          }
+
+          .searchBar {
+            width: 215px;
+            height: 28px;
+            padding: 5px 15px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: #fafafa;
+
+            &::placeholder {
+              text-align: center;
+            }
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .searchIcon {
+            position: absolute;
+            left: 75px;
+            padding-top: 7px;
+          }
+        }
+
+        .rightBar {
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+
+          img {
+            width: 25px;
+            height: 25px;
+            margin-right: 20px;
+            cursor: pointer;
+          }
+
+          .myProfileOff {
+            display: none;
+          }
+
+          .myProfileOn {
+            position: absolute;
+            top: 29px;
+            right: -26px;
+            width: 160px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: white;
+            z-index: 9999;
+
+            .myProfileList {
+              margin: 0 auto;
+              padding: 0;
+              list-style: none;
+
+              li {
+                display: flex;
+                align-items: center;
+                padding: 13.3px 20px;
+
+                &:hover {
+                  background-color: #fafafa;
+                }
+
+                img {
+                  width: 18px;
+                  height: 18px;
+                  margin-right: 12px;
+                }
+
+                &:nth-child(3) {
+                  border-bottom: 1px solid #dbdbdb;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mainSection {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .wrapper {
+        position: relative;
+        width: 600px;
+        max-width: 600px;
+        margin-top: 15px;
+        margin-right: 20px;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        background-color: white;
+
+        &:nth-child(1) {
+          margin-top: 90px;
+        }
+
+        .feedHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: absolute;
+          width: 100%;
+          height: 60px;
+          padding: 20px;
+
+          .catProfilePhoto2 {
+            width: 32px;
+            border-radius: 100px;
+          }
+
+          .headerRight img {
+            position: relative;
+            width: 20px;
+            cursor: pointer;
+          }
+
+          .headerLeft {
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      .catProfilePhoto4 {
+        width: 25px;
+        border-radius: 100px;
+      }
+
+      .feedImage {
+        margin-top: 60px;
+
+        .myCat {
+          width: 100%;
+          height: 790px;
+        }
+      }
+
+      .imageBottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 40px;
+      }
+
+      .bottomLeft,
+      .bottomRight {
+        position: relative;
+        top: 5px;
+        margin-top: 5px;
+      }
+
+      .bottomLeft img {
+        width: 23px;
+        float: left;
+        margin-right: 15px;
+
+        &:nth-child(3) {
+          width: 20px;
+        }
+      }
+
+      .bottomRight img {
+        width: 25px;
+        float: right;
+      }
+
+      .whosLike {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 20px;
+        margin-top: 10px;
+        padding-left: 20px;
+      }
+
+      .likeWho {
+        margin-left: 6px;
+      }
+
+      .feedContent {
+        width: 100%;
+        margin-top: 13px;
+        padding-left: 20px;
+      }
+
+      .commentList {
+        width: 100%;
+        margin-top: 10px;
+        padding: 0 20px;
+        list-style: none;
+
+        .commentLi {
+          display: flex;
+          justify-content: space-between;
+
+          img {
+            width: 15px;
+          }
+        }
+      }
+
+      .time {
+        width: 100%;
+        height: 20px;
+        font-size: 10pt;
+        margin-top: 5px;
+        margin-bottom: 8px;
+        padding-left: 20px;
+        color: #8e8e8e;
+      }
+
+      .commentInput {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 55px;
+        padding-left: 20px;
+        border-top: 1px solid #dbdbdb;
+      }
+
+      .comment {
+        width: 90%;
+        border: 0px solid transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      #textUpload {
+        padding: 15px;
+        border: 0px solid transparent;
+        font-size: 9pt;
+        font-weight: bold;
+        color: #b9def7;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .mainRight {
+        margin-top: 90px;
+        width: 30%;
+        max-width: 300px;
+
+        .myProfile {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .catProfilePhoto3 {
+            width: 55px;
+            border-radius: 100px;
+          }
+        }
+
+        .sideMenu {
+          width: 100%;
+          border: 1px solid #dbdbdb;
+          border-radius: 3px;
+          padding: 15px 20px;
+          margin-top: 20px;
+          background-color: white;
+
+          .sideTop {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 12px;
+
+            .sideLeft {
+              color: gray;
+            }
+
+            .sideRight {
+              cursor: pointer;
+            }
+          }
+
+          .sideBottom {
+            p {
+              display: block;
+            }
+
+            img {
+              position: relative;
+              top: 7px;
+              width: 40px;
+              border-radius: 100px;
+            }
+
+            .userID {
+              display: inline-block;
+              margin-left: 2spx;
+
+              .whatID {
+                margin-left: 7px;
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+              }
+
+              p {
+                margin: 7px;
+              }
+
+              .beforeUpload {
+                color: gray;
+              }
+            }
+          }
+        }
+        fooTer {
+          width: 100%;
+          color: #dbdbdb;
+          border-radius: 3px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    @media all and (max-width: 890px) {
+      .leftBar {
+        margin-left: 20px;
+      }
+
+      .mainRight {
+        display: none;
+      }
+
+      section {
+        justify-content: center;
+
+        .wrapper {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

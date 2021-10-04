@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "user_id": "iwascar",
+    "userProfileImg": "./images/miyeon/user3.jpg",
+    "feedImg": "./images/miyeon/userCat1.jpg",
+    "feedContent": "저희 친구네 고양이 털쪘어요",
+    "likeNumber": 6,
+    "uploadTime": 20,
+    "feedComment": [
+      {
+        "id": 1,
+        "name": "mingvly",
+        "content": "아니 저기요? 저희 고양이 마음대로 올려도 되는 겁니까ㅋ"
+      },
+      {
+        "id": 2,
+        "name": "v_ddabong_v",
+        "content": "말랑말랑 발 입에 넣고 굴려굴려"
+      },
+      {
+        "id": 3,
+        "name": "kich555",
+        "content": "쏘큐트,,ㅋ"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user_id": "buzzi_nyang",
+    "userProfileImg": "./images/miyeon/buzzi.jpg",
+    "feedImg": "./images/miyeon/cat.jpg",
+    "feedContent": "박버찌 기다려.. 집사가 곧 냥줍 하러 간다..",
+    "likeNumber": 3,
+    "uploadTime": 38,
+    "feedComment": [
+      {
+        "id": 1,
+        "name": "v_ddabong_v",
+        "content": "집사가 기다린다 버찌야"
+      },
+      {
+        "id": 2,
+        "name": "kich555",
+        "content": "킬리안도 미묘인데 버찌도 미묘네요 ^-ㅅ-^"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "user_id": "bluecat",
+    "userProfileImg": "./images/miyeon/cat1.jpg",
+    "feedImg": "./images/miyeon/userCat2.jpg",
+    "feedContent": "나만 보면 드러눕는 길냥이.. 배 만져부러!!",
+    "likeNumber": 11,
+    "uploadTime": 24,
+    "feedComment": [
+      {
+        "id": 1,
+        "name": "rrpec9",
+        "content": "아기맹수 버찌녀석"
+      }
+    ]
+  }
+]

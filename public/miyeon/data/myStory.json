@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "user_id": "mydog_syuli",
+    "profileImg": "./images/miyeon/user1.jpg",
+    "imgAlt": "user photo4",
+    "uploadTimeMinute": 40,
+    "uploadTime": 1
+  },
+  {
+    "id": 2,
+    "user_id": "v_ddabong_v",
+    "profileImg": "./images/miyeon/user2.jpg",
+    "imgAlt": "user photo5",
+    "uploadTimeMinute": 25,
+    "uploadTime": 3
+  },
+  {
+    "id": 3,
+    "user_id": "iwascar",
+    "profileImg": "./images/miyeon/user3.jpg",
+    "imgAlt": "user photo6",
+    "uploadTimeMinute": 9,
+    "uploadTime": 2
+  }
+]

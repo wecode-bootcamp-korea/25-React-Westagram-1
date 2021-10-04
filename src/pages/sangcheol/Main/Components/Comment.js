@@ -2,14 +2,13 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
-    const { id, handleInput, handleSubmit, inputKeyword } = this.props;
+    const { handleInput, handleSubmit, inputKeyword } = this.props;
     return (
       <div>
-        <form className="main_comment" key={key}>
+        <form className="main_comment">
           <input
             className="main_comment_text"
             placeholder="댓글 달기..."
-            name={id}
             onChange={handleInput}
             value={inputKeyword}
           />

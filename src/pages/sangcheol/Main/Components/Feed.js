@@ -12,12 +12,6 @@ class Feed extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     comment: this.props.content,
-  //   });
-  // }
-
   handleInput = e => {
     this.setState({
       inputKeyword: e.target.value,
@@ -44,8 +38,7 @@ class Feed extends Component {
       content,
     } = this.props;
 
-    console.log('content', content);
-    console.log('state', this.state.comment);
+    const { inputKeyword, comment } = this.state;
 
     return (
       <div className="feeds" key={id}>
@@ -66,8 +59,8 @@ class Feed extends Component {
               alt="qwe"
               className="iconbox_heart"
             />
-            <img src="./images/sangcheol/chat.png" alt="" />
-            <img src="./images/sangcheol/send.png" alt="" />
+            <img src="./images/sangcheol/chat.png" alt="chat" />
+            <img src="./images/sangcheol/send.png" alt="send" />
             <i className="far fa-bookmark"></i>
           </div>
 
@@ -86,12 +79,12 @@ class Feed extends Component {
             <div className="main-icon-like-text-write-footer">1시간 전</div>
           </div>
         </div>
-        <CommentList content={content} />
+        <CommentList content={content} comment={comment} />
         <Comment
-          inputKeyword={this.inputKeyword}
-          comment={this.state.comment}
+          inputKeyword={inputKeyword}
+          comment={comment}
           handleSubmit={this.handleSubmit}
-          handleInput={this.state.handleInput}
+          handleInput={this.handleInput}
         />
       </div>
     );

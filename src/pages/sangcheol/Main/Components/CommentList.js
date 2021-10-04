@@ -3,7 +3,7 @@ import AddComment from './AddComment';
 
 class CommentList extends Component {
   render() {
-    const { content } = this.props;
+    const { content, comment } = this.props;
     return (
       <>
         <ul className="main-icon-like-text-write_commentbox">
@@ -17,9 +17,8 @@ class CommentList extends Component {
               </li>
             );
           })}
-          {/* 고정된 댓글 */}
         </ul>
-        <AddComment content={content} />
+        <AddComment comment={comment} />
       </>
     );
   }

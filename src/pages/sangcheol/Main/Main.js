@@ -12,27 +12,9 @@ class Main extends React.Component {
     super();
 
     this.state = {
-      // inputKeyword: '',
       feedList: [],
     };
   }
-
-  // handleInput = e => {
-  //   console.log(e.target.name);
-  //   this.setState({
-  //     inputKeyword: e.target.value,
-  //   });
-  // };
-
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   if (this.state.inputKeyword.length === 0) return;
-
-  //   this.setState({
-  //     comment: this.state.comment.concat(this.state.inputKeyword),
-  //     inputKeyword: '',
-  //   });
-  // };
 
   componentDidMount() {
     fetch('http://localhost:3000/Data/FeedData.json', {
@@ -43,7 +25,6 @@ class Main extends React.Component {
         this.setState({
           feedList: data,
         });
-        console.log(data);
       });
   }
 

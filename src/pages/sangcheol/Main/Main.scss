@@ -1,0 +1,89 @@
+.sangcheol-Main {
+  #header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 100px;
+    .nav-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 80px;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      :first-child {
+        margin-right: 10px;
+      }
+    }
+
+    #logo-text {
+      padding-left: 20px;
+      font-size: 20px;
+      font-family: 'Lobster', cursive;
+      font-weight: bold;
+      border-left: 1px solid black;
+    }
+  }
+
+  .textbox {
+    position: relative;
+    display: flex;
+    height: 30px;
+
+    .fa-search {
+      color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 10px;
+      left: 35%;
+    }
+  }
+
+  .nav_search {
+    width: 190px;
+    padding: 5px 10px;
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .textbox :last-child::placeholder {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-box {
+    display: flex;
+
+    :nth-child(2) {
+      margin: 0px 30px;
+    }
+  }
+
+  a {
+    all: unset;
+    color: black;
+  }
+
+  input {
+    outline: none;
+  }
+  .fab {
+    font-size: 25px;
+  }
+
+  .fas {
+    font-size: 10px;
+  }
+
+  .far {
+    font-size: 25px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+}
